@@ -18,6 +18,6 @@ class MenuComposer
     public function compose(View $view)
     {
         $menus = Menu::select('id', 'name', 'parent_id')->where('active', 1)->orderByDesc('id')->get();
-        $view->with('menus1', $menus);
+        $view->with('menus', $menus);
     }
 }
