@@ -7,7 +7,14 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public function index()
+    public function indexAdmin()
+    {
+        return view('admin.main', [
+            'title' => 'Trang quản trị Admin'
+        ]);
+    }
+
+    public function indexUser()
     {
         return view('main', [
             'title' => 'Trang quản trị Admin'

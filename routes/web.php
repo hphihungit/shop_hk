@@ -15,10 +15,10 @@ Route::post('admin/users/login/store', [LoginController::class, 'store']);
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->group(function () {
 
-        Route::get('/', [MainController::class, 'index'])->name('admin');
-        Route::get('main', [MainController::class, 'index']);
+        Route::get('/', [MainController::class, 'indexAdmin'])->name('admin');
+        Route::get('main', [MainController::class, 'indexAdmin']);
 
-        #Menu
+        #Menus
         Route::prefix('menus')->group(function () {
             Route::get('add', [MenuController::class, 'create']);
             Route::post('add', [MenuController::class, 'store']);
@@ -38,4 +38,4 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
-Route::get('/', [MainController::class, 'index']);
+Route::get('/', [MainController::class, 'indexUser']);
