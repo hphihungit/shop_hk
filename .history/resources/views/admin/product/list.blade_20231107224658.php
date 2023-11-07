@@ -5,7 +5,7 @@
         <thead>
             <tr>
                 <th style="width: 50px">ID</th>
-                <th>Tên Danh Mục</th>
+                <th>Name</th>
                 <th>Active</th>
                 <th>Update</th>
                 <th style="width: 100px">&nbsp;</th>

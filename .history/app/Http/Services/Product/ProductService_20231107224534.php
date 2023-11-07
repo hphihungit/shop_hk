@@ -56,7 +56,9 @@ class ProductService {
     }
 
     public function get() {
-        return Product::with('menu')->orderbyDesc('id')->paginate(15);
+        return Product::
+            ->width('menu')
+        orderbyDesc('id')->paginate(15);
     }
 }
 ?>

@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\ProductRequest;
 use Illuminate\Http\Request;
 use App\Http\Services\Product\ProductService;
-use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -62,13 +61,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        return view('admin.product.edit', [
-            'title' => 'Chỉnh Sửa Danh Mục',
-            'product' => $product,
-            'menus' => $this->productService->getMenu()
-        ]);
+        //
     }
 
     /**

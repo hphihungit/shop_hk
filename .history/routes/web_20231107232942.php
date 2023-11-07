@@ -33,7 +33,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('add', [ProductController::class, 'create']);
             Route::post('add', [ProductController::class, 'store']);
             Route::get('list', [ProductController::class, 'index']);
-            Route::get('edit/{product}', [ProductController::class, 'show']);
+            Route::get('edit/{product}', [ProductController::class, 'show']);)
         });
 
         #Upload

@@ -5,9 +5,9 @@
         <thead>
             <tr>
                 <th style="width: 50px">ID</th>
+                <th>Tên Sản Phẩm</th>
                 <th>Tên Danh Mục</th>
-                <th>Active</th>
-                <th>Update</th>
+                <th>Giá Gốc</th>
                 <th style="width: 100px">&nbsp;</th>
             </tr>
         </thead>

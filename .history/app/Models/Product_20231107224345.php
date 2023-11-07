@@ -19,8 +19,4 @@ class Product extends Model
         'active',
         'thumb'
     ];
-
-    public function menu() {
-        return $this->hasOne(Menu::class, 'id', 'menu_id');
-    }
 }
