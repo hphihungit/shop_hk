@@ -11,7 +11,7 @@
             <th>Giá Khuyến Mãi</th>
             <th>Active</th>
             <th>Update</th>
-            <th style=""></th>
+            <th style="width: 100px">&nbsp;</th>
         </tr>
     </thead>
 
@@ -30,10 +30,10 @@
                     <i class="fa-solid fa-pen-to-square"></i>
                 </a>
 
-                <a href="#" class="btn btn-danger btn-sm" 
-                onclick="removeRow({{ $product->id }}, '/admin/products/destroy')">
-                    <i class="fa-solid fa-trash"></i>
+                <a href="#" class="btn btn-danger btn-sm" onclick="removeRow('{{ $product->id }}', '/admin/sliders/destroy')">
+                    <i class="fas fa-trash"></i>
                 </a>
+
             </td>
         </tr>
         @endforeach
