@@ -74,4 +74,17 @@ class ProductController extends Controller
             'error' => true
         ]);
     }
+
+    public function destroy(Request $request)
+    {
+        $result = $this->productService->delete($request);
+        if ($result) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Xóa thành công sản phẩm'
+            ]);
+        }
+
+        return response()->json([ 'error' => true ]);
+    }
 }

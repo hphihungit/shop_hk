@@ -11,10 +11,6 @@ class ProductService {
         return Menu::Where('active', 1)->get();
     }
 
-    public function get() {
-        return Product::with('menu')->orderbyDesc('id')->paginate(15);
-    }
-
     protected function validPrice($request) {
         if ($request->input('price') != 0 && $request->input('price_sale') != 0 && 
             $request->input('price') < $request->input('price_sale')
@@ -71,21 +67,11 @@ class ProductService {
         } catch (\Exception $err) {
             Session::flash('error', 'Cập Nhật Sản Phẩm Lỗi');
             Log::info($err->getMessage());
-            return false;
         }
-
-        return true;
     }
 
-    public function delete($request) {
-        $product = Product::where('id', $request->input('id'))->first();
-
-        if ($product) {
-            $product->delete();
-            return true;
-        }
-
-        return false;
+    public function get() {
+        return Product::with('menu')->orderbyDesc('id')->paginate(15);
     }
 }
 ?>

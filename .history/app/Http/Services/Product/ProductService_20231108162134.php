@@ -78,7 +78,7 @@ class ProductService {
     }
 
     public function delete($request) {
-        $product = Product::where('id', $request->input('id'))->first();
+        $product = Product::Where('id', $request->input('id'))->first();
 
         if ($product) {
             $product->delete();

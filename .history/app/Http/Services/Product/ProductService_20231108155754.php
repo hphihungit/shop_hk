@@ -2,17 +2,12 @@
 namespace App\Http\Services\Product;
 use App\Models\Product;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Log;
 use App\Models\Menu;
 
 class ProductService {
 
     public function getMenu() {
         return Menu::Where('active', 1)->get();
-    }
-
-    public function get() {
-        return Product::with('menu')->orderbyDesc('id')->paginate(15);
     }
 
     protected function validPrice($request) {
@@ -67,25 +62,13 @@ class ProductService {
         try {
             $product->fill($request->input());
             $product->save();
-            Session::flash('success', 'Cập Nhật Sản Phẩm Thành Công');
         } catch (\Exception $err) {
-            Session::flash('error', 'Cập Nhật Sản Phẩm Lỗi');
-            Log::info($err->getMessage());
-            return false;
+            Session::flash('error', 'Cập nhật sản phẩm lỗi');
         }
-
-        return true;
     }
 
-    public function delete($request) {
-        $product = Product::where('id', $request->input('id'))->first();
-
-        if ($product) {
-            $product->delete();
-            return true;
-        }
-
-        return false;
+    public function get() {
+        return Product::with('menu')->orderbyDesc('id')->paginate(15);
     }
 }
 ?>

@@ -11,7 +11,7 @@
             <th>Giá Khuyến Mãi</th>
             <th>Active</th>
             <th>Update</th>
-            <th style="width: 100px">&nbsp;</th>
+            <th style=""></th>
         </tr>
     </thead>
 

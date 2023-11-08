@@ -45,7 +45,7 @@
         <div class="form-group">
             <label for="menu">Ảnh Sản Phẩm</label>
             <input class="form-control" type="file" id="upload">
-            <div id="image_show">
+            <div class="image_show">
 
             </div>
             <input type="hidden" name="thumb" id="thumb">
