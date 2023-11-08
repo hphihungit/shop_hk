@@ -23,7 +23,7 @@
                     <label>Danh Mục</label>
                     <select class="form-control" name="menu_id">
                         @foreach($menus as $menu)
-                        <option value="{{ $menu->id }}">{{ $menu->name }}</option>
+                            <option value="{{ $menu->id }}">{{ $menu->name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -45,7 +45,7 @@
         <div class="form-group">
             <label for="menu">Ảnh Sản Phẩm</label>
             <input class="form-control" type="file" id="upload">
-            <div id="image_show">
+            <div class="image_show">
 
             </div>
             <input type="hidden" name="thumb" id="thumb">

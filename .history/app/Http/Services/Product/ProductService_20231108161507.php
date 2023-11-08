@@ -11,10 +11,6 @@ class ProductService {
         return Menu::Where('active', 1)->get();
     }
 
-    public function get() {
-        return Product::with('menu')->orderbyDesc('id')->paginate(15);
-    }
-
     protected function validPrice($request) {
         if ($request->input('price') != 0 && $request->input('price_sale') != 0 && 
             $request->input('price') < $request->input('price_sale')
@@ -78,7 +74,7 @@ class ProductService {
     }
 
     public function delete($request) {
-        $product = Product::where('id', $request->input('id'))->first();
+        $product = Product::Where('id', $request->input('id'))->first();
 
         if ($product) {
             $product->delete();
@@ -86,6 +82,10 @@ class ProductService {
         }
 
         return false;
+    }
+
+    public function get() {
+        return Product::with('menu')->orderbyDesc('id')->paginate(15);
     }
 }
 ?>
