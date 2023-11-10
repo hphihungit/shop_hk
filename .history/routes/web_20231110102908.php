@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Controller;
 
 
 Route::get('admin/users/login', [LoginController::class, 'index'])->name('login');
@@ -52,6 +53,6 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
-Route::get('/', [App\Http\Controllers\MainController::class, 'indexUser']);
+Route::get('/', [MainController::class, 'indexUser']);
 
-Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']);
+Route::get('danh-muc/{id}-{slug}.html', [MenuController::class, 'index']);

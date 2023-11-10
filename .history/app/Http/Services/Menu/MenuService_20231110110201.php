@@ -19,7 +19,7 @@ class MenuService {
     }
 
     public function getProduct($menu) {
-        return $menu->products()
+        return $menu->products
         ->select('id', 'name', 'price', 'price_sale', 'thumb')
         ->where('active', 1)
         ->orderByDesc('id')

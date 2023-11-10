@@ -8,6 +8,13 @@ use App\Http\Services\Menu\MenuService;
 
 class MainController extends Controller
 {
+    protected $slider;
+    protected $menu;
+
+    public function __construct(MenuService $menu)
+    {
+        $this->menu = $menu;
+    }
     public function indexAdmin()
     {
         return view('admin.main', [

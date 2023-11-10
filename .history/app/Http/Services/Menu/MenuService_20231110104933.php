@@ -15,15 +15,7 @@ class MenuService {
     }
 
     public function getId($id) {
-        return Menu::where('id', $id)->where('active', 1)->firstOrFail();
-    }
-
-    public function getProduct($menu) {
-        return $menu->products()
-        ->select('id', 'name', 'price', 'price_sale', 'thumb')
-        ->where('active', 1)
-        ->orderByDesc('id')
-        ->paginate(12);
+        return Menu::where('id', $id)->where('active')->firstOrFail();
     }
 
     public function show()

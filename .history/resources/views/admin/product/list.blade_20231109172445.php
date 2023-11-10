@@ -30,7 +30,7 @@
                     <i class="fa-solid fa-pen-to-square"></i>
                 </a>
 
-                <a href="#" class="btn btn-danger btn-sm" onclick="removeRow('{{ $product->id }}', '/admin/products/destroy')">
+                <a href="#" class="btn btn-danger btn-sm" onclick="removeRow('{{ $product->id }}', '/admin/sliders/destroy')">
                     <i class="fas fa-trash"></i>
                 </a>
 

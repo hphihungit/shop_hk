@@ -14,16 +14,8 @@ class MenuService {
         return Menu::orderbyDesc('id')->paginate(20);
     }
 
-    public function getId($id) {
-        return Menu::where('id', $id)->where('active', 1)->firstOrFail();
-    }
-
-    public function getProduct($menu) {
-        return $menu->products()
-        ->select('id', 'name', 'price', 'price_sale', 'thumb')
-        ->where('active', 1)
-        ->orderByDesc('id')
-        ->paginate(12);
+    public function getId() {
+        return Menu::where('id', $id)
     }
 
     public function show()

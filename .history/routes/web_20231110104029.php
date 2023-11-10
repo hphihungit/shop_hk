@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Users\LoginController;
 use App\Http\Controllers\Admin\MainController;
+use APP\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UploadController;
@@ -52,6 +53,6 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
-Route::get('/', [App\Http\Controllers\MainController::class, 'indexUser']);
+Route::get('/', [MainController::class, 'indexUser']);
 
-Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']);
+Route::get('danh-muc/{id}-{slug}.html', [MenuController::class, 'index']);
