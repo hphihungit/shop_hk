@@ -5,7 +5,6 @@
                 <h4 class="stext-301 cl0 p-b-30">
                     Categories
                 </h4>
-
                 <ul>
                     <li class="p-b-10">
                         <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
@@ -406,3 +405,4 @@
 </script>
 <!--===============================================================================================-->
 <script src="/template/js/main.js"></script>
+<script src="/template/js/public.js"></script>

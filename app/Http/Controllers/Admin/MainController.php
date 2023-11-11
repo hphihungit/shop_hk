@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Services\Menu\MenuService;
 use App\Http\Services\Slider\SliderService;
-use App\Http\Services\Product\ProductServi;
+use App\Http\Services\Product\ProductService;
 
 class MainController extends Controller
 {
@@ -14,7 +14,7 @@ class MainController extends Controller
     protected $menu;
     protected $product;
 
-    public function __construct(MenuService $menu, SliderService $slider, ProductServi  $product)
+    public function __construct(MenuService $menu, SliderService $slider, ProductService  $product)
     {
         $this->menu = $menu;
         $this->slider = $slider;
@@ -28,7 +28,7 @@ class MainController extends Controller
     }
     public function indexUser()
     {
-        return view('main', [
+        return view('home', [
             'title' => 'Trang quản trị Admin',
             'menus' => $this->menu->show(),
             'sliders' => $this->slider->show(),
