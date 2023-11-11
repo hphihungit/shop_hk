@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\ProductRequest;
 use Illuminate\Http\Request;
-use App\Http\Services\Product\ProductAdminService;
+use App\Http\Services\Product\ProductService;
 use App\Models\Product;
 
 class ProductController extends Controller
@@ -13,7 +13,7 @@ class ProductController extends Controller
 
     protected $productService;
 
-    public function __construct(ProductAdminService $productService) {
+    public function __construct(ProductService $productService) {
         $this->productService = $productService;
     }
 
@@ -35,7 +35,7 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
-        $result = $this->productService->insert($request);
+        $result =$this->productService->insert($request);
 
         return redirect()->back();
     }

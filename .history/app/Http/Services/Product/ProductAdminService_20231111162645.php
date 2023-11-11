@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Log;
 use App\Models\Menu;
 
-class ProductAdminService {
+class ProductService {
 
     public function getMenu() {
         return Menu::Where('active', 1)->get();

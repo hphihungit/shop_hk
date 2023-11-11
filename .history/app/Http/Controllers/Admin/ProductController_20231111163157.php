@@ -13,7 +13,7 @@ class ProductController extends Controller
 
     protected $productService;
 
-    public function __construct(ProductAdminService $productService) {
+    public function __construct(App\Http\Controllers\Admin\ProductAdminService $productService) {
         $this->productService = $productService;
     }
 

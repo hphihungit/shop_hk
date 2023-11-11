@@ -5,14 +5,14 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Log;
 use App\Models\Menu;
 
-class ProductAdminService {
+class ProductService {
 
     public function getMenu() {
         return Menu::Where('active', 1)->get();
     }
 
     public function get() {
-        return Product::with('menu')->orderbyDesc('id')->paginate(15);
+        return Product::with('menu')->orderByDesc('id')->paginate(15);
     }
 
     protected function validPrice($request) {
