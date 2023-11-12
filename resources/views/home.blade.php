@@ -92,8 +92,6 @@
         <div id="loadProduct">
             @include('products.list')
         </div>
-
-
         <!-- Load more -->
         <div class="flex-c-m flex-w w-full p-t-45" id="button-loadMore">
             <input type="hidden" value="1" id="page">
