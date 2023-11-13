@@ -31,4 +31,5 @@
 <link rel="stylesheet" type="text/css" href="/template/css/util.css">
 <link rel="stylesheet" type="text/css" href="/template/css/main.css">
 <link rel="stylesheet" type="text/css" href="/template/css/style.css">
+<!-- <link rel="stylesheet" href="/template/admin/js/main.js"> -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
