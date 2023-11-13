@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="row isotope-grid">
     @foreach($products as $key => $product)
     <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
@@ -6,6 +7,16 @@
             <div class="block2-pic hov-img0">
                 <img src="{{ $product->thumb }}" alt="{{ $product->name }}">
             </div>
+=======
+
+@foreach($products as $key => $product)
+<div class="col-sm-6 col-md-4 col-lg-3 p-b-35">
+    <!-- Block2 -->
+    <div class="block2">
+        <div class="block2-pic hov-img0">
+            <img src="{{ $product->thumb }}" alt="{{ $product->name }}">
+        </div>
+>>>>>>> 43b9948 (Gio hang 43-45)
 
             <div class="block2-txt flex-w flex-t p-t-14">
                 <div class="block2-txt-child1 flex-col-l ">
@@ -20,5 +31,10 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     @endforeach
 </div>
+=======
+</div>
+@endforeach
+>>>>>>> 43b9948 (Gio hang 43-45)
