@@ -18,6 +18,7 @@
                 @foreach($products as $key => $product)
                 @php
                 $price = \App\Helpers\Helper::price($product->price, $product->price_sale);
+                // cai nay tính tổng tiền , nếu có mã giảm giá thì thì lấy opposite thì lấy giá gốc
                 $sumPriceCart += $product->price_sale != 0 ? $product->price_sale : $product->price;
                 @endphp
                 <li class="header-cart-item flex-w flex-t m-b-12">
@@ -37,7 +38,6 @@
                 </li>
                 @endforeach
                 @endif
-
             </ul>
 
             <div class="w-full">

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMenusTable extends Migration
+class CreateCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('parent_id');
-            $table->text('description');
-            $table->longText('content');
-            $table->integer('active');
+            $table->string('name', 255);
+            $table->string('phone', 255);
+            $table->string('address', 255);
+            $table->string('email', 255);
+            // cái ghi chú
+            $table->text('content');
             // 2 cái update và create at
             $table->timestamps();
         });
@@ -32,6 +33,6 @@ class CreateMenusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('customers');
     }
 }

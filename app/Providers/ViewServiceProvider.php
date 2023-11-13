@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Http\View\Composer\CartComposer;
 use Illuminate\Support\ServiceProvider;
 use App\Http\View\Composer\MenuComposer;
+use Illuminate\Support\Composer;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -15,7 +17,9 @@ class ViewServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        // Register your view composer
+        // composer truyen vao cac view cu the 
         view()->composer('header', MenuComposer::class);
+        // 
+        view()->composer('cart', CartComposer::class);
     }
 }

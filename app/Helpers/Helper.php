@@ -82,6 +82,7 @@ class Helper
 
         return false;
     }
+    // ham tính tiền xem coi sản phẩm có giá khuyến mãi thì lấy , không thì thôi
     public static function price($price = 0, $priceSale = 0)
     {
         if ($priceSale != 0) return number_format($priceSale);

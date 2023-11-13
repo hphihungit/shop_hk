@@ -20,6 +20,7 @@ class CreateSlidersTable extends Migration
             $table->string('thumb', 255);
             $table->integer('sort_by');
             $table->integer('active');
+            // 2 cái update và create at
             $table->timestamps();
         });
     }

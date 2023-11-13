@@ -2,16 +2,15 @@
 
 @section('content')
 <form class="bg0 p-t-130 p-b-85" method="post">
+    @include('admin.alert')
+
     @if (count($products) != 0)
     <div class="container">
         <div class="row">
             <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
                 <div class="m-l-25 m-r--38 m-lr-0-xl">
                     <div class="wrap-table-shopping-cart">
-
-                        @php
-                            $total = 0;
-                        @endphp
+                        @php $total = 0; @endphp
                         <table class="table-shopping-cart">
                             <tbody>
                                 <tr class="table_head">
@@ -20,16 +19,17 @@
                                     <th class="column-3">Price</th>
                                     <th class="column-4">Quantity</th>
                                     <th class="column-5">Total</th>
+                                    <th class="column-6">&nbsp;</th>
                                 </tr>
 
                                 @foreach($products as $key => $product)
-
                                 @php
+                                //co gia khuyến mãi thì lấy , ko thì thôi
                                 $price = $product->price_sale != 0 ? $product->price_sale : $product->price;
+                                // nhân giá tiền với số lượng sản phẩm
                                 $priceEnd = $price * $carts[$product->id];
                                 $total += $priceEnd;
                                 @endphp
-
                                 <tr class="table_row">
                                     <td class="column-1">
                                         <div class="how-itemcart1">
@@ -52,6 +52,9 @@
                                         </div>
                                     </td>
                                     <td class="column-5">{{ number_format($priceEnd, 0, '', '.') }}</td>
+                                    <td class="p-r-15">
+                                        <a href="/carts/delete/{{ $product->id }}">Xóa</a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -93,8 +96,41 @@
                         </div>
                     </div>
 
+                    <div class="flex-w flex-t bor12 p-t-15 p-b-30">
+
+                        <div class="size-100 p-r-18 p-r-0-sm w-full-ssm">
+
+                            <div class="p-t-15">
+                                <span class="stext-112 cl8">
+                                    Thông Tin Khách Hàng
+                                </span>
+
+                                <div class="bor8 bg0 m-b-12">
+                                    <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" placeholder="Tên khách Hàng" required>
+                                </div>
+
+                                <div class="bor8 bg0 m-b-12">
+                                    <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone" placeholder="Số Điện Thoại" required>
+                                </div>
+
+                                <div class="bor8 bg0 m-b-12">
+                                    <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="address" placeholder="Địa Chỉ Giao Hàng">
+                                </div>
+
+                                <div class="bor8 bg0 m-b-12">
+                                    <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="email" placeholder="Email Liên Hệ">
+                                </div>
+
+                                <div class="bor8 bg0 m-b-12">
+                                    <textarea class="cl8 plh3 size-111 p-lr-15" name="content"></textarea>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
                     <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-                        Proceed to Checkout
+                        Đặt Hàng
                     </button>
                 </div>
             </div>
@@ -103,7 +139,7 @@
 </form>
 @else
 <div class="text-center">
-    <h2>Giỏ Hàng Trống</h2>
+    <h2>Giỏ hàng trống</h2>
 </div>
 @endif
 @endsection
