@@ -98,8 +98,8 @@ class CartService
             DB::commit();
             Session::flash('success', 'Đặt Hàng Thành Công');
 
-            // Thiết lập thời gian để đợi gửi mail
-            SendMail::dispatch($request->input('email'))->delay(now()->addSeconds(2));
+            // Thiết lập hàng đợi gửi mail
+            SendMail::dispatch()->delay(now()->addSecond(5));
 
             // Xóa thông tin giỏ hàng từ Session.
             Session::forget('carts');
@@ -132,15 +132,5 @@ class CartService
             ];
         }
         return Cart::insert($data);
-    }
-    public function getCustomer()
-    {
-        return Customer::orderByDesc('id')->paginate(15);
-    }
-    public function getProductForCart($customer)
-    {
-        return $customer->carts()->with(['product' => function ($query) {
-            $query->select('id', 'name', 'thumb');
-        }])->get();
     }
 }
