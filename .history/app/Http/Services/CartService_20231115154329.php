@@ -99,7 +99,7 @@ class CartService
             Session::flash('success', 'Đặt Hàng Thành Công');
 
             // Thiết lập thời gian để đợi gửi mail
-            SendMail::dispatch($request->input('email'))->delay(now()->addSeconds(2));
+            SendMail::dispatch()->delay(now()->addSecond(2));
 
             // Xóa thông tin giỏ hàng từ Session.
             Session::forget('carts');
