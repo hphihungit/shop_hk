@@ -55,7 +55,7 @@
           <button type="submit">Log In</button>
 
           <div class="login-register">
-            <p>Don't have an account? <a href="/admin/users/register" class="login-link">Sign Up</a> </p>
+            <p>Don't have an account? <a href="admin/users/register" class="login-link">Sign Up</a> </p>
           </div>
           @csrf
         </form>

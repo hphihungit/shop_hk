@@ -14,8 +14,7 @@ use App\Http\Controllers\CartController;
 Route::get('admin/users/login', [LoginController::class, 'index'])->name('login');
 Route::post('admin/users/login/store', [LoginController::class, 'store']);
 
-Route::get('admin/users/register', [RegisterController::class, 'index'])->name('register');
-Route::post('admin/users/register/store', [RegisterController::class, 'store']);
+Route::get('admin/users/register', [RegisterController::class, 'index']);
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->group(function () {

@@ -7,15 +7,13 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\SliderController;
-use App\Http\Controllers\Admin\Users\RegisterController;
 use App\Http\Controllers\CartController;
 
 
 Route::get('admin/users/login', [LoginController::class, 'index'])->name('login');
 Route::post('admin/users/login/store', [LoginController::class, 'store']);
 
-Route::get('admin/users/register', [RegisterController::class, 'index'])->name('register');
-Route::post('admin/users/register/store', [RegisterController::class, 'store']);
+Route::get('admin/users/register', );
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->group(function () {
