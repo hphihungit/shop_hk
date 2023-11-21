@@ -49,13 +49,13 @@
 
           <div class="remember-forgot">
             <label> <input type="checkbox">Remember me</label>
-            <a href="{{ route('forget.password') }}">Forgot Password</a>
+            <a href="#">Forgot Password</a>
           </div>
 
           <button type="submit">Log In</button>
 
           <div class="login-register">
-            <p>Don't have an account? <a href="/admin/users/register" class="login-link">Sign Up</a> </p>
+            <p>Don't have an account? <a href="#" class="login-link">Sign Up</a> </p>
           </div>
           @csrf
         </form>

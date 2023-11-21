@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Users\LoginController;
-use App\Http\Controllers\Admin\Users\ForgetPassword;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProductController;
@@ -13,7 +12,6 @@ use App\Http\Controllers\CartController;
 
 
 Route::get('admin/users/login', [LoginController::class, 'index'])->name('login');
-Route::get('admin/users/resetpassword', [LoginController::class, 'ressetPassword']);
 Route::post('admin/users/login/store', [LoginController::class, 'store']);
 
 Route::get('admin/users/register', [RegisterController::class, 'index'])->name('register');
@@ -73,13 +71,3 @@ Route::get('carts', [App\Http\Controllers\CartController::class, 'show']);
 Route::post('update-cart', [App\Http\Controllers\CartController::class, 'update']);
 Route::get('carts/delete/{id}', [App\Http\Controllers\CartController::class, 'remove']);
 Route::post('carts', [App\Http\Controllers\CartController::class, 'addCart']);
-// ResetPassword
-
-Route::get('forget-password', [ForgetPassword::class, 'forgetPassword'])
-    ->name("forget.password");
-Route::post('forget-password', [ForgetPassword::class, 'forgetPasswordPost'])
-    ->name("forget.passwordpost");
-Route::get('/reset-password/{token}', [ForgetPassword::class, 'resetPassword'])
-    ->name("reset.password");
-Route::post('reset-password', [ForgetPassword::class, 'resetPasswordPost'])
-    ->name("reset.passwordpost");

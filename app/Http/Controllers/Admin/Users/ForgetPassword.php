@@ -32,10 +32,14 @@ class ForgetPassword extends Controller
             'token' => $token,
             'created_at' => Carbon::now(),
         ]);
-        Mail::send("email.forget-password", ['token' => $token], function ($message) use ($request) {
-            $message->to($request->email);
-            $message->subject("Reset Password");
-        });
+        Mail::send(
+            "admin.email.forget-password",
+            ['token' => $token],
+            function ($message) use ($request) {
+                $message->to($request->email);
+                $message->subject("Reset Password");
+            }
+        );
         return redirect()->to(route("forget.password"))->with(
             "success",
             "We have send an email to reset your password"
