@@ -9,13 +9,19 @@ use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('admin.users.login', [
             'title' => 'Đăng nhập hệ thống'
         ]);
     }
+    public function ressetPassword()
+    {
+        return view('admin.users.resetpassword');
+    }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
 
         $this->validate($request, [
             'email' => 'required|email:filter',
@@ -28,7 +34,6 @@ class LoginController extends Controller
         ], $request->input('remember'))) {
 
             return redirect()->route('admin');
-
         }
 
         Session::flash('error', 'Email hoặc Password không đúng');

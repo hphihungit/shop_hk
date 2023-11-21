@@ -14,6 +14,7 @@ class CartController extends Controller
     {
         $this->cart = $cart;
     }
+    // xem giỏ hàng
     public function index()
     {
         return view('admin.carts.customer', [
@@ -21,11 +22,13 @@ class CartController extends Controller
             'customer' => $this->cart->getCustomer()
         ]);
     }
+    // show ra chi tiết về giỏ hàng của khách hàng
     public function show(Customer $customer)
     {
         $carts = $this->cart->getProductForCart($customer);
 
         return view('admin.carts.detail', [
+            // $customer->name để có thể 
             'title' => 'Chi Tiết Đơn Hàng: ' . $customer->name,
             'customer' => $customer,
             'carts' => $carts

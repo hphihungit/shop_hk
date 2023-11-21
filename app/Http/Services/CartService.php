@@ -139,6 +139,7 @@ class CartService
     }
     public function getProductForCart($customer)
     {
+        // $customer->carts() -> mqh Laravel Eloquent
         return $customer->carts()->with(['product' => function ($query) {
             $query->select('id', 'name', 'thumb');
         }])->get();
