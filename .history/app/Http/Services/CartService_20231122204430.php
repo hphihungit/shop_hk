@@ -100,10 +100,10 @@ class CartService
 
             //Send Mail
             Mail::send(
-                'mail.success', ['customer' => $customer],
-                function($email) use ($customer){
-                    $email->to($customer->email);
-                    $email->subject($customer->name, "Your order confirmation");
+                'shop.order_confirmation', ['user' => $customer],
+                function($message) use ($user){
+                    $message->to($user->email);
+                    $message->subject($user->name, "Your order confirmation");
                 }
             );
 

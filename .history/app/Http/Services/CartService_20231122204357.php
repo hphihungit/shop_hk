@@ -100,10 +100,11 @@ class CartService
 
             //Send Mail
             Mail::send(
-                'mail.success', ['customer' => $customer],
-                function($email) use ($customer){
-                    $email->to($customer->email);
-                    $email->subject($customer->name, "Your order confirmation");
+                'shop.order_confirmation',
+                ['user' => $user, 'code' => $code],
+                function($message) use ($user){
+                    $message->to($user->email);
+                    $message->subject($user->name, "Your order confirmation");
                 }
             );
 
@@ -117,7 +118,6 @@ class CartService
 
         return true;
     }
-
     protected function infoProductCart($carts, $customer_id)
     {
         // Lấy các khóa (ID sản phẩm) từ mảng giỏ hàng.
@@ -140,12 +140,10 @@ class CartService
         }
         return Cart::insert($data);
     }
-
     public function getCustomer()
     {
         return Customer::orderByDesc('id')->paginate(15);
     }
-
     public function getProductForCart($customer)
     {
         // $customer->carts() -> mqh Laravel Eloquent
