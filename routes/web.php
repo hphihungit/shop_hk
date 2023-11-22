@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UploadController;
+use App\Http\Controllers\AuthenController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\Users\RegisterController;
 use App\Http\Controllers\CartController;
@@ -21,9 +22,9 @@ Route::post('admin/users/register/store', [RegisterController::class, 'store']);
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->group(function () {
-
-        Route::get('/', [MainController::class, 'indexAdmin'])->name('admin');
-        Route::get('main', [MainController::class, 'indexAdmin']);
+        ////
+        // Route::get('/', [AuthenController::class, 'checkUser']);
+        Route::get('main', [MainController::class, 'indexAdmin'])->name('admin');
 
         #Menus
         Route::prefix('menus')->group(function () {
@@ -62,7 +63,8 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
-Route::get('/', [MainController::class, 'indexUser']);
+// Route::get('/', [AuthenController::class, 'checkUser']);
+Route::get('/', [MainController::class, 'indexUser'])->name('home');
 Route::post('/services/load-product', [App\Http\Controllers\Admin\MainController::class, 'loadProduct']);
 
 Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']);
@@ -73,13 +75,17 @@ Route::get('carts', [App\Http\Controllers\CartController::class, 'show']);
 Route::post('update-cart', [App\Http\Controllers\CartController::class, 'update']);
 Route::get('carts/delete/{id}', [App\Http\Controllers\CartController::class, 'remove']);
 Route::post('carts', [App\Http\Controllers\CartController::class, 'addCart']);
+
 // ResetPassword
 
 Route::get('forget-password', [ForgetPassword::class, 'forgetPassword'])
     ->name("forget.password");
+
 Route::post('forget-password', [ForgetPassword::class, 'forgetPasswordPost'])
     ->name("forget.passwordpost");
+
 Route::get('/reset-password/{token}', [ForgetPassword::class, 'resetPassword'])
     ->name("reset.password");
+
 Route::post('reset-password', [ForgetPassword::class, 'resetPasswordPost'])
     ->name("reset.passwordpost");

@@ -15,6 +15,7 @@ class LoginController extends Controller
             'title' => 'Đăng nhập hệ thống'
         ]);
     }
+
     public function ressetPassword()
     {
         return view('admin.users.resetpassword');
@@ -22,18 +23,27 @@ class LoginController extends Controller
 
     public function store(Request $request)
     {
-
         $this->validate($request, [
-            'email' => 'required|email:filter',
+            'email'    => 'required|email:filter',
             'password' => 'required'
         ]);
 
-        if (Auth::attempt([
-            'email' => $request->input('email'),
+        $credentials = [
+            'email'    => $request->input('email'),
             'password' => $request->input('password')
-        ], $request->input('remember'))) {
+        ];
 
-            return redirect()->route('admin');
+        if (Auth::attempt($credentials, $request->input('remember'))) {
+            if (!Auth::user()) {
+                return redirect()->route('login');
+            }
+
+            // Remove unnecessary semicolons after if conditions
+            if (Auth::user()->role === '1') {
+                return redirect()->route('admin');
+            } elseif (Auth::user()->role === '2') {
+                return redirect()->route('home');
+            }
         }
 
         Session::flash('error', 'Email hoặc Password không đúng');
