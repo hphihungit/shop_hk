@@ -406,5 +406,23 @@
 <!--===============================================================================================-->
 <script src="/template/js/main.js"></script>
 <script src="/template/js/public.js"></script>
+<script nomodule>
+    ! function() {
+        var e = document,
+            t = e.createElement("script");
+        if (!("noModule" in t) && "onbeforeload" in t) {
+            var n = !1;
+            e.addEventListener("beforeload", (function(e) {
+                if (e.target === t) n = !0;
+                else if (!e.target.hasAttribute("nomodule") || !n) return;
+                e.preventDefault()
+            }), !0), t.type = "module", t.src = ".", e.head.appendChild(t), t.remove()
+        }
+    }();
+</script>
+<script nomodule id="vite-legacy-polyfill" src="/assets/polyfills-legacy.206d55a8.js"></script>
+<script nomodule id="vite-legacy-entry" data-src="/assets/index-legacy.c288cc97.js">
+    System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))
+</script>
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<df-messenger intent="WELCOME" chat-title="CHAT-AI-DOAN" agent-id="7676dd9a-ca1e-4d76-951c-73f9c20acf07" language-code="en"></df-messenger>
+<df-messenger allow="microphone;" width="200" height="200" intent="WELCOME" chat-title="Answer-Questions-Automatically" agent-id="7676dd9a-ca1e-4d76-951c-73f9c20acf07" language-code="vi"></df-messenger>

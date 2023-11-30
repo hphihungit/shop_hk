@@ -80,6 +80,13 @@ Route::get('carts', [App\Http\Controllers\CartController::class, 'show']);
 Route::post('update-cart', [App\Http\Controllers\CartController::class, 'update']);
 Route::get('carts/delete/{id}', [App\Http\Controllers\CartController::class, 'remove']);
 Route::post('carts', [App\Http\Controllers\CartController::class, 'addCart']);
+Route::get('thank', [App\Http\Controllers\CartController::class, 'show2']);
+//Payment
+Route::post('vnpay-payment', [App\Http\Controllers\CartController::class, 'payment_vnpay'])
+    ->name("payment");
+Route::post('momo-payment', [App\Http\Controllers\CartController::class, 'payment_momo'])
+    ->name("payment");
+
 
 // ResetPassword
 Route::get('forget-password', [ForgetPassword::class, 'forgetPassword'])

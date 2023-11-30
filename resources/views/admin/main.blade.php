@@ -36,9 +36,9 @@
                         <li class="nav-item nav-search border-0 ml-1 ml-md-3 ml-lg-5 d-none d-md-flex">
                             <form class="nav-link form-inline mt-2 mt-md-0">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search" />
+                                    <input type="text" class="form-control" placeholder="Search" id="searchInput" />
                                     <div class="input-group-append">
-                                        <span class="input-group-text">
+                                        <span class="input-group-text" id="searchIcon" style="cursor: pointer;">
                                             <i class="mdi mdi-magnify"></i>
                                         </span>
                                     </div>

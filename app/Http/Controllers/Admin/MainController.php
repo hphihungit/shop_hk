@@ -7,18 +7,21 @@ use Illuminate\Http\Request;
 use App\Http\Services\Menu\MenuService;
 use App\Http\Services\Slider\SliderService;
 use App\Http\Services\Product\ProductService;
+use App\Http\Services\Banner\BannerService;
 
 class MainController extends Controller
 {
     protected $slider;
     protected $menu;
     protected $product;
+    protected $banner;
 
-    public function __construct(MenuService $menu, SliderService $slider, ProductService  $product)
+    public function __construct(MenuService $menu, SliderService $slider, ProductService  $product, BannerService $banner)
     {
         $this->menu = $menu;
         $this->slider = $slider;
         $this->product = $product;
+        $this->banner = $banner;
     }
     public function indexAdmin()
     {
@@ -32,7 +35,8 @@ class MainController extends Controller
             'title' => 'Trang quản trị Admin',
             'menus' => $this->menu->show(),
             'sliders' => $this->slider->show(),
-            'products' => $this->product->get()
+            'products' => $this->product->get(),
+            'banners' => $this->banner->show()
         ]);
     }
     public function loadProduct(Request $request)

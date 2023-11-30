@@ -154,13 +154,16 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*//////////////////////////////////////////////////////////////////
 [ BUTTON BACK TO TOP ]*/
+.main-menu > li > a{ 
+  text-decoration: none
+}
 .btn-back-to-top {
   display: none;
   position: fixed;
   width: 40px;
   height: 38px;
   bottom: 0px;
-  right: 40px;
+  left: 40px;
   background-color: #717fe0;
   opacity: 0.5;
   justify-content: center;
@@ -181,7 +184,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 .btn-back-to-top:hover {
   opacity: 1;
-  background-color: #717fe0;
+  background-color: #ea1616;
 }
 
 @media (max-width: 575px) {

@@ -46,6 +46,9 @@
                                 </tbody>
                             </table>
 
+<<<<<<< HEAD
+<div class="card-footer clearfix">
+=======
                             {!! $customer->links() !!}
                         </div>
                     </div>
@@ -53,6 +56,7 @@
             </div>
         </div>
     </div>
+>>>>>>> a05558f33351b6ed807448c6e692e521f6941ce6
 </div>
 
 @endsection
