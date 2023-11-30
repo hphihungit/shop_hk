@@ -27,10 +27,6 @@ Route::middleware(['auth'])->group(function () {
         // Route::get('/', [AuthenController::class, 'checkUser']);
         Route::get('main', [MainController::class, 'indexAdmin'])->name('admin');
 
-        Route::prefix('accounts')->group(function () {
-            Route::get('list', [AccountController::class, 'show']);
-        });
-
         #Menus
         Route::prefix('menus')->group(function () {
             Route::get('add', [MenuController::class, 'create']);

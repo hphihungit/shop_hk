@@ -4,7 +4,7 @@
 <div class="main-panel">
     <div class="content-wrapper pb-0">
         <div class="page-header">
-            <h3 class="page-title">Danh Sách Sản Phẩm</h3>
+            <h3 class="page-title">Danh Sách Người Dùng</h3>
         </div>
         <div class="row">
             <div class="col-12 grid-margin stretch-card">
@@ -18,8 +18,8 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 50px">ID</th>
-                                        <th>Tên Sản Phẩm</th>
-                                        <th>Danh Mục</th>
+                                        <th>Tên Người Dùng</th>
+                                        <th>Số Điện Thoại</th>
                                         <th>Giá Sản Phẩm</th>
                                         <th>Giá Khuyến Mãi</th>
                                         <th>Active</th>

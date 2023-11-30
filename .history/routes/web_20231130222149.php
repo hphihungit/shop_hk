@@ -28,7 +28,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('main', [MainController::class, 'indexAdmin'])->name('admin');
 
         Route::prefix('accounts')->group(function () {
-            Route::get('list', [AccountController::class, 'show']);
+
         });
 
         #Menus

@@ -1,7 +1,9 @@
 @extends('admin.main')
 
 @section('content')
-<div class="main-panel">
+@extends('admin.main')
+
+@section('content')<div class="main-panel">
     <div class="content-wrapper pb-0">
         <div class="page-header">
             <h3 class="page-title">Danh Sách Sản Phẩm</h3>
@@ -61,4 +63,5 @@
         </div>
     </div>
 </div>
+@endsection
 @endsection

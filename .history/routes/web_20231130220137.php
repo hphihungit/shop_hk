@@ -9,7 +9,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\AuthenController;
 use App\Http\Controllers\Admin\SliderController;
-use App\Http\Controllers\Admin\AccountController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\Users\RegisterController;
 use App\Http\Controllers\CartController;
 
@@ -21,15 +21,13 @@ Route::post('admin/users/login/store', [LoginController::class, 'store']);
 Route::get('admin/users/register', [RegisterController::class, 'index'])->name('register');
 Route::post('admin/users/register/store', [RegisterController::class, 'store']);
 
+Route::get('admin/accounts/list', [AccountController::class, 'index'])->name('listAccount');
+
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->group(function () {
         ////
         // Route::get('/', [AuthenController::class, 'checkUser']);
         Route::get('main', [MainController::class, 'indexAdmin'])->name('admin');
-
-        Route::prefix('accounts')->group(function () {
-            Route::get('list', [AccountController::class, 'show']);
-        });
 
         #Menus
         Route::prefix('menus')->group(function () {

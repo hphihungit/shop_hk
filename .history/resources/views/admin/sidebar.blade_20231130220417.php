@@ -27,13 +27,16 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="mdi mdi-view-dashboard menu-icon"></i>
-                <span class="menu-title">Tài khoản</span>
+                <span class="menu-title">User</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/accounts/list">Danh Sách Tài Khoản</a>
+                        <a class="nav-link" href="/admin/menus/add">Thêm danh mục</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/menus/list">Danh sách danh mục</a>
                     </li>
                 </ul>
             </div>

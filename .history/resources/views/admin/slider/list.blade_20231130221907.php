@@ -4,7 +4,7 @@
 <div class="main-panel">
     <div class="content-wrapper pb-0">
         <div class="page-header">
-            <h3 class="page-title">Danh Sách Sản Phẩm</h3>
+            <h3 class="page-title">Danh Sách Slider</h3>
         </div>
         <div class="row">
             <div class="col-12 grid-margin stretch-card">
@@ -18,32 +18,31 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 50px">ID</th>
-                                        <th>Tên Sản Phẩm</th>
-                                        <th>Danh Mục</th>
-                                        <th>Giá Sản Phẩm</th>
-                                        <th>Giá Khuyến Mãi</th>
-                                        <th>Active</th>
-                                        <th>Update</th>
+                                        <th>Tiêu Đề</th>
+                                        <th>Link</th>
+                                        <th>Ảnh</th>
+                                        <th>Trang Thái</th>
+                                        <th>Cập Nhật</th>
                                         <th style="width: 100px">&nbsp;</th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
-                                    @foreach($products as $key => $product)
+                                    @foreach($sliders as $key => $slider)
                                     <tr>
-                                        <td>{{ $product->id }}</td>
-                                        <td>{{ $product->name }}</td>
-                                        <td>{{ $product->menu->name }}</td>
-                                        <td>{{ $product->price }}</td>
-                                        <td>{{ $product->price_sale }}</td>
-                                        <td>{!! \App\Helpers\Helper::active($product->active) !!}</td>
-                                        <td>{{ $product->updated_at }}</td>
-                                        <td>
-                                            <a class="btn btn-primary btn-sm" href="/admin/products/edit/{{ $product->id }}">
-                                                <i class="fa-solid fa-pen-to-square"></i>
+                                        <td>{{ $slider->id }}</td>
+                                        <td>{{ $slider->name }}</td>
+                                        <td class="scroll">{{ $slider->url }}</td>
+                                        <td><a href="{{ $slider->thumb }}" target="_blank">
+                                                <img src="{{ $slider->thumb }}" height="40px">
                                             </a>
-
-                                            <a href="#" class="btn btn-danger btn-sm" onclick="removeRow('{{ $product->id }}', '/admin/products/destroy')">
+                                        </td>
+                                        <td>{!! \App\Helpers\Helper::active($slider->active) !!}</td>
+                                        <td>{{ $slider->updated_at }}</td>
+                                        <td>
+                                            <a class="btn btn-primary btn-sm" href="/admin/sliders/edit/{{ $slider->id }}">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-danger btn-sm" onclick="removeRow('{{ $slider->id }}', '/admin/sliders/destroy')">
                                                 <i class="fas fa-trash"></i>
                                             </a>
 
@@ -53,7 +52,7 @@
                                 </tbody>
                             </table>
 
-                            {!! $products->links() !!}
+                            {!! $sliders->links() !!}
                         </div>
                     </div>
                 </div>

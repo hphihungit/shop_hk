@@ -47,9 +47,9 @@ class Helper
             : '<span class="btn btn-success btn-xs">YES</span>';
     }
 
-    public static function roleUser($role = 1): string {
-        return $role == 1 ? '<span class="btn btn-success btn-xs">1</span>'
-        : '<span class="btn btn-info btn-xs">2</span>';
+    public static function roleUser($role = 1): int {
+        return $role == 1 ? '<span class="btn btn-primary btn-xs">1</span>'
+        : '<span class="btn btn-success btn-xs">2</span>';
     }
 
     public static function menus($menus, $parent_id = 0): string

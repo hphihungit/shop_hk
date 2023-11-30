@@ -36,7 +36,7 @@
                                         <td>{{ $product->menu->name }}</td>
                                         <td>{{ $product->price }}</td>
                                         <td>{{ $product->price_sale }}</td>
-                                        <td>{!! \App\Helpers\Helper::active($product->active) !!}</td>
+                                        <td>{!! \App\Helpers\Helper::roleUser($product->role) !!}</td>
                                         <td>{{ $product->updated_at }}</td>
                                         <td>
                                             <a class="btn btn-primary btn-sm" href="/admin/products/edit/{{ $product->id }}">

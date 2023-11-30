@@ -33,7 +33,7 @@
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/accounts/list">Danh Sách Tài Khoản</a>
+                        <a class="nav-link" href="/admin/menus/add"></a>
                     </li>
                 </ul>
             </div>

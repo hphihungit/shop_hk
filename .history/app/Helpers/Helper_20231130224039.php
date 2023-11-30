@@ -48,7 +48,7 @@ class Helper
     }
 
     public static function roleUser($role = 1): string {
-        return $role == 1 ? '<span class="btn btn-success btn-xs">1</span>'
+        return $role == 1 ? '<span class="btn btn-primary btn-xs">1</span>'
         : '<span class="btn btn-info btn-xs">2</span>';
     }
 
