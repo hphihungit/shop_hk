@@ -38,4 +38,28 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        var searchInput = document.getElementById('searchInput');
+        var searchIcon = document.getElementById('searchIcon');
+
+        if (searchInput && searchIcon) {
+            searchIcon.addEventListener('click', function(e) {
+                e.preventDefault();
+
+
+                var query = (searchInput.value || '').toLowerCase();
+
+
+                var rows = document.querySelectorAll('.table tbody tr');
+                rows.forEach(function(row) {
+                    var rowText = row.textContent.toLowerCase();
+                    row.style.display = rowText.includes(query) ? '' : 'none';
+                });
+
+            });
+        }
+    });
+</script>
 @endsection

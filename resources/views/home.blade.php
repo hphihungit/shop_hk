@@ -46,6 +46,7 @@
                     @foreach($banners as $banner)
                     <img src="{{$banner->picture}}" alt="IMG-BANNER">
                     @endforeach
+
                     @foreach($menus as $menu)
 
                     <a href="/danh-muc/{{ $menu->id }}-{{ \Str::slug($menu->name, '-') }}.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
