@@ -1,13 +1,13 @@
 @extends('main')
 
 @section('content')
-<form class="bg0 p-t-130 p-b-85" method="post">
+<form class="bg0 p-t-130 " method="post">
     @include('admin.alert')
 
     @if (count($products) != 0)
     <div class="container">
         <div class="row">
-            <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
+            <div class="col-lg-10 col-xl-7 m-lr-auto m-b-20">
                 <div class="m-l-25 m-r--38 m-lr-0-xl">
                     <div class="wrap-table-shopping-cart">
                         @php $total = 0; @endphp
@@ -29,6 +29,7 @@
                                 // nhân giá tiền với số lượng sản phẩm
                                 $priceEnd = $price * $carts[$product->id];
                                 $total += $priceEnd;
+                                $name_product = $product->name
                                 @endphp
                                 <tr class="table_row">
                                     <td class="column-1">
@@ -69,14 +70,14 @@
                                 Apply coupon
                             </div>
                         </div>
-
+                        <input type="hidden" name="total" value="{{ $total }}">
                         <input type="submit" value="Update Cart" formaction="/update-cart" class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
                         @csrf
                     </div>
                 </div>
             </div>
 
-            <div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
+            <div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-20">
                 <div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
                     <h4 class="mtext-109 cl2 p-b-30">
                         Cart Totals
@@ -106,11 +107,11 @@
                                 </span>
 
                                 <div class="bor8 bg0 m-b-12">
-                                    <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" placeholder="Tên khách Hàng" required>
+                                    <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" placeholder="Tên khách Hàng">
                                 </div>
 
                                 <div class="bor8 bg0 m-b-12">
-                                    <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone" placeholder="Số Điện Thoại" required>
+                                    <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone" placeholder="Số Điện Thoại">
                                 </div>
 
                                 <div class="bor8 bg0 m-b-12">
@@ -130,13 +131,47 @@
                     </div>
 
                     <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-                        Đặt Hàng
+                        Payment on delivery
                     </button>
+
                 </div>
             </div>
         </div>
     </div>
 </form>
+<!-- <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+    Payment Online
+</button> -->
+<div class="container p-b-30">
+    <div class="row justify-content-center">
+        <div class="col-md-6 ">
+            <form action="/vnpay-payment" method="post" class="text-center">
+                @csrf
+                <input type="hidden" name="total" value="{{ $total }}">
+
+                <div class="d-flex justify-content-center">
+                    <button name="redirect" type="submit" style="border-radius: 5px;" class="flex-c-m stext-101 cl0 size-90 bg3 bor10 hov-btn3 p-lr-50 p-tb-7 trans-04 pointer p-30">
+                        Payment VNPAY &nbsp; <img style="width: 30px ;border-radius:5px;height: 30px;" src="/template/images/vnpay.png" alt="">
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form action="/momo-payment" method="post" class="text-center">
+                @csrf
+                <input type="hidden" name="total" value="{{ $total }}">
+                <input type="hidden" name="name_product" value="{{ $name_product }}">
+                <div class="d-flex justify-content-center">
+                    <button name="payUrl" type="submit" style="border-radius: 5px;" class="flex-c-m stext-101 cl0 size-90 bg3 bor10 hov-btn3 p-lr-50 p-tb-7 trans-04 pointer">
+                        Payment Momo &nbsp; <img style="width: 30px;border-radius:5px;height: 30px;" src="/template/images/momo.jpg" alt="">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 @else
 <div class="text-center">
     <h2>Giỏ hàng trống</h2>

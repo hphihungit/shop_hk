@@ -19,11 +19,13 @@
                         {!! $menusHtml !!}
 
                         <li>
-                            <a <li class="about.html"> Thông tin </a>
+                            <a href="" class="about.html"> Thông tin </a>
                         </li>
-
                         <li>
-                            <a <li class="contact.html"> Liên hệ</a>
+                            <a href="" class="contact.html"> Liên hệ</a>
+                        </li>
+                        <li>
+                            <a href="/admin/users/login" class="contact.html">Đăng nhập</a>
                         </li>
 
                     </ul>
@@ -86,7 +88,7 @@
                 <a href="index.html">Trang chủ</a>
 
                 {!! $menusHtml !!}
-
+            </li>
             <li>
                 <a <li class="about.html"> Thông tin </a>
             </li>
@@ -95,7 +97,7 @@
                 <a <li class="contact.html"> Liên hệ</a>
             </li>
 
-            </li>
+
         </ul>
     </div>
 

@@ -34,6 +34,5 @@
 </table>
 
 <div class="card-footer clearfix">
-    <!-- {!! $customer->links() !!} -->
 </div>
 @endsection
