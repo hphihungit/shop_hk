@@ -48,9 +48,7 @@
             searchIcon.addEventListener('click', function(e) {
                 e.preventDefault();
 
-
                 var query = (searchInput.value || '').toLowerCase();
-
 
                 var rows = document.querySelectorAll('.table tbody tr');
                 rows.forEach(function(row) {
