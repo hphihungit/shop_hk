@@ -25,7 +25,7 @@ class MainController extends Controller
     }
     public function indexAdmin()
     {
-        return view('admin.main', [
+        return view('admin.home', [
             'title' => 'Trang quản trị Admin'
         ]);
     }

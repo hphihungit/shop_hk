@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\AuthenController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\Users\RegisterController;
 use App\Http\Controllers\CartController;
 
@@ -19,6 +20,8 @@ Route::post('admin/users/login/store', [LoginController::class, 'store']);
 
 Route::get('admin/users/register', [RegisterController::class, 'index'])->name('register');
 Route::post('admin/users/register/store', [RegisterController::class, 'store']);
+
+Route::get('admin/users/list', [UserController::class, 'index'])->name('list');
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->group(function () {
@@ -84,7 +87,6 @@ Route::post('momo-payment', [App\Http\Controllers\CartController::class, 'paymen
 
 
 // ResetPassword
-
 Route::get('forget-password', [ForgetPassword::class, 'forgetPassword'])
     ->name("forget.password");
 
