@@ -22,7 +22,7 @@
 
         .scroll {
             overflow-x: scroll;
-            width: 500px;
+            width: 300px;
             display: block;
         }
     </style>
