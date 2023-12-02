@@ -17,12 +17,25 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th style="width: 50px">ID</th>
-                                        <th>Tên Khách Hàng</th>
-                                        <th>Số Điện Thoại</th>
-                                        <th>Email</th>
-                                        <th>Ngày Đặt hàng</th>
-                                        <th style="width: 100px">&nbsp;</th>
+                                        <div class="main-panel">
+                                            <div class="content-wrapper pb-0">
+                                                <div class="page-header">
+                                                    <h3 class="page-title">Danh Sách Danh Mục</h3>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12 grid-margin stretch-card">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">Thông Tin Chi Tiết</h4>
+                                                                @include('admin.alert')
+                                                                <p class="card-description"></p>
+                                                                <div class="table-responsive">
+                                                                    <th style="width: 50px">ID</th>
+                                                                    <th>Tên Khách Hàng</th>
+                                                                    <th>Số Điện Thoại</th>
+                                                                    <th>Email</th>
+                                                                    <th>Ngày Đặt hàng</th>
+                                                                    <th style="width: 100px">&nbsp;</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,7 +58,6 @@
                                     @endforeach
                                 </tbody>
                             </table>
-
                             {!! $customer->links() !!}
                         </div>
                     </div>

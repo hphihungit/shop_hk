@@ -4,7 +4,7 @@
 <div class="main-panel">
     <div class="content-wrapper pb-0">
         <div class="page-header">
-            <h3 class="page-title">Danh Sách Danh Mục</h3>
+            <h3 class="page-title">Danh Sách Người Dùng</h3>
         </div>
         <div class="row">
             <div class="col-12 grid-margin stretch-card">
@@ -18,35 +18,40 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 50px">ID</th>
-                                        <th>Tên Khách Hàng</th>
+                                        <th>Tên Người Dùng</th>
                                         <th>Số Điện Thoại</th>
                                         <th>Email</th>
-                                        <th>Ngày Đặt hàng</th>
+                                        <th>Role</th>
+                                        <th>Mật Khẩu</th>
                                         <th style="width: 100px">&nbsp;</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
-                                    @foreach($customer as $key => $customer)
+                                    @foreach($accounts as $key => $account)
                                     <tr>
-                                        <td>{{ $customer->id }}</td>
-                                        <td>{{ $customer->name }}</td>
-                                        <td>{{ $customer->phone }}</td>
-                                        <td>{{ $customer->email }}</td>
-                                        <td>{{ $customer->created_at }}</td>
+                                        <td>{{ $account->id }}</td>
+                                        <td>{{ $account->name }}</td>
+                                        <td>{{ $account->phone_number }}</td>
+                                        <td>{{ $account->email }}</td>
+                                        <td>{!! \App\Helpers\Helper::roleUser($account->role) !!}</td>
+                                        <td class="scroll">{{ $account->password }}</td>
                                         <td>
-                                            <a class="btn btn-primary btn-sm" href="/admin/customers/view/{{ $customer->id }}">
-                                                <i class="fas fa-eye"></i>
+                                            <a class="btn btn-primary btn-sm" href="/admin/products/edit/{{ $account->id }}">
+                                                <i class="fa-solid fa-pen-to-square"></i>
                                             </a>
-                                            <a href="#" class="btn btn-danger btn-sm" onclick="removeRow('{{ $customer->id }}', '/admin/customers/destroy')">
+
+                                            <a href="#" class="btn btn-danger btn-sm" onclick="removeRow('{{ $account->id }}', '/admin/products/destroy')">
                                                 <i class="fas fa-trash"></i>
                                             </a>
+
                                         </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
                             </table>
 
-                            {!! $customer->links() !!}
+                            {!! $account->links() !!}
                         </div>
                     </div>
                 </div>
@@ -54,6 +59,4 @@
         </div>
     </div>
 </div>
-
-
 @endsection

@@ -5,6 +5,6 @@ use App\Models\User;
 
 class AccountService {
     public function getAccounts() {
-        return User::orderBy('id', 'asc')->paginate(20);
+        return User::orderbyAsc('id')->paginate(20);
     }
 }

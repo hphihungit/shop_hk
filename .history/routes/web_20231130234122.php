@@ -29,7 +29,6 @@ Route::middleware(['auth'])->group(function () {
 
         Route::prefix('accounts')->group(function () {
             Route::get('list', [AccountController::class, 'show']);
-            Route::get('edit{menu}', [AccountController::class, 'edit']);
         });
 
         #Menus
