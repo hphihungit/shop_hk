@@ -23,12 +23,12 @@ Route::post('admin/users/register/store', [RegisterController::class, 'store']);
 
 Route::get('admin/users/list', [UserController::class, 'index'])->name('list');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'checkUserRole:1'])->group(function () {
     Route::prefix('admin')->group(function () {
         ////
-        // Route::get('/', [AuthenController::class, 'checkUser']);
-        Route::get('main', [MainController::class, 'indexAdmin'])->name('admin');
-
+        // Route::get('/main', [AuthenController::class, 'checkUser']);
+        Route::get('main', [MainController::class, 'indexAdmin'])
+            ->name('admin');
         #Menus
         Route::prefix('menus')->group(function () {
             Route::get('add', [MenuController::class, 'create']);
@@ -67,7 +67,10 @@ Route::middleware(['auth'])->group(function () {
 });
 
 // Route::get('/', [AuthenController::class, 'checkUser']);
-Route::get('/', [MainController::class, 'indexUser'])->name('home');
+Route::middleware(['auth', 'checkUserRole:2'])->group(function () {
+    Route::get('/', [MainController::class, 'indexUser'])->name('home');
+});
+
 Route::post('/services/load-product', [App\Http\Controllers\Admin\MainController::class, 'loadProduct']);
 
 Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']);

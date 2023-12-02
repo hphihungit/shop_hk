@@ -24,7 +24,6 @@
       </div>
     </div>
     <!-- Form login -->
-    @include('admin.alert')
     <div class="logreg-box">
       <div class="form-box login">
         <form class="form" action="/admin/users/login/store" method="post">
@@ -44,8 +43,9 @@
             </span>
             <input type="password" id="password" name="password">
             <label for="">Password</label>
-            <span id="password-error" class="error-message"></span>
-          </div>
+            <span id="password-error" class="error-message"></span> <br>
+            @include('admin.alert')
+          </div> <br>
 
           <div class="remember-forgot">
             <label> <input type="checkbox">Remember me</label>

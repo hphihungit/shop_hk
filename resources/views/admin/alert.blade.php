@@ -1,22 +1,19 @@
 @if ($errors->any())
-<div class="alert alert-danger">
-    <ul>
-        @foreach ($errors->all() as $errorItem)
-        <li>{{ $errorItem }}</li>
-        @endforeach
-    </ul>
+<div class="alert alert-danger" style="color: red;text-align:left">
+    @foreach ($errors->all() as $errorItem)
+    <h1 style="font-size: 16px;">{{ $errorItem }}</h1>
+    @endforeach
 </div>
 @endif
 
 @if(Session::has('error'))
-<div class="alert alert-danger">
-    {{Session::get('error')}}
+<div class="alert alert-danger" style="color: red;">
+    {{ Session::get('error') }}
 </div>
 @endif
 
 @if(Session::has('success'))
 <div class="alert alert-success">
-    {{Session::get('success')}}
+    {{ Session::get('success') }}
 </div>
-
 @endif

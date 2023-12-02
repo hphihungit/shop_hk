@@ -23,7 +23,6 @@
                 </div>
             </div>
         </div>
-        @include('admin.alert')
         <div class="logreg-box">
             <div class="form-box login">
                 <form class="form" action="{{ route('forget.passwordpost') }}" method="post">
@@ -36,6 +35,7 @@
                         <input id="email" type="email" name="email" placeholder="Enter your email" value="{{old('email')}}">
                         <label for="">Email</label>
                         <span class="form-message"></span>
+                        @include('admin.alert')
                     </div>
 
                     <div class="remember-forgot">
