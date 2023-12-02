@@ -24,7 +24,7 @@
             </div>
         </div>
         <!-- Form login -->
-        @include('admin.alert')
+
         <div class="logreg-box">
             <div class="form-box login">
                 <form class="form" action="{{ route('reset.passwordpost') }}" method="post">
@@ -56,9 +56,10 @@
                         <input type="password" id="confirmpassword" name="password_confirmation">
                         <label for="confirmpassword">Confirm Password</label>
                         <span id="password-error" class="error-message"></span>
+                        @include('admin.alert')
                     </div>
 
-                    <button type="submit">Log In</button>
+                    <button type="submit">ResetPassword</button>
 
                     <div class="login-register">
                         <p>Don't have an account? <a href="/register" class="login-link">Sign Up</a> </p>
