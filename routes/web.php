@@ -12,7 +12,7 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\Users\RegisterController;
 use App\Http\Controllers\CartController;
-
+use App\Http\Services\Account\AccountService;
 
 Route::get('admin/users/login', [LoginController::class, 'index'])->name('login');
 Route::get('admin/users/resetpassword', [LoginController::class, 'ressetPassword']);
@@ -23,7 +23,7 @@ Route::post('admin/users/register/store', [RegisterController::class, 'store']);
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->group(function () {
-        ////
+        // //
         // Route::get('/', [AuthenController::class, 'checkUser']);
         Route::get('main', [MainController::class, 'indexAdmin'])->name('admin');
 
@@ -72,9 +72,12 @@ Route::middleware(['auth'])->group(function () {
 });
 
 // Route::get('/', [AuthenController::class, 'checkUser']);
-Route::middleware(['auth', 'checkUserRole:2'])->group(function () {
-    Route::get('/', [MainController::class, 'indexUser'])->name('home');
-});
+// Route::middleware(['auth', 'checkUserRole:2'])->group(function () {
+// });
+
+Route::get('/', [MainController::class, 'indexUser'])->name('home');
+
+Route::get('/search', [App\Http\Controllers\ProductController::class, 'search']);
 
 Route::post('/services/load-product', [App\Http\Controllers\Admin\MainController::class, 'loadProduct']);
 
