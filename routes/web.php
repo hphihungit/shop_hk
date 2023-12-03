@@ -29,7 +29,9 @@ Route::middleware(['auth'])->group(function () {
 
         Route::prefix('accounts')->group(function () {
             Route::get('list', [AccountController::class, 'show']);
-            Route::get('edit{menu}', [AccountController::class, 'edit']);
+            Route::get('edit/{account}', [AccountController::class, 'showedit']);
+            Route::post('edit/{account}', [AccountController::class, 'edit']);
+            Route::DELETE('destroy', [AccountController::class, 'delete'])->name('users.delete');
         });
 
         #Menus
