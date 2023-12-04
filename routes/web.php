@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\Users\RegisterController;
 use App\Http\Controllers\CartController;
 use App\Http\Services\Account\AccountService;
+use App\Http\Controllers\Admin\LoginGGControler;
 
 Route::get('admin/users/login', [LoginController::class, 'index'])->name('login');
 Route::get('admin/users/resetpassword', [LoginController::class, 'ressetPassword']);
@@ -21,7 +22,7 @@ Route::post('admin/users/login/store', [LoginController::class, 'store']);
 Route::get('admin/users/register', [RegisterController::class, 'index'])->name('register');
 Route::post('admin/users/register/store', [RegisterController::class, 'store']);
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'checkUserRole:1'])->group(function () {
     Route::prefix('admin')->group(function () {
         // //
         // Route::get('/', [AuthenController::class, 'checkUser']);
@@ -75,8 +76,9 @@ Route::middleware(['auth'])->group(function () {
 // Route::middleware(['auth', 'checkUserRole:2'])->group(function () {
 // });
 
-Route::get('/', [MainController::class, 'indexUser'])->name('home');
-
+Route::middleware(['auth', 'checkUserRole:2'])->group(function () {
+    Route::get('/', [MainController::class, 'indexUser'])->name('home');
+});
 Route::get('/search', [App\Http\Controllers\ProductController::class, 'search']);
 
 Route::post('/services/load-product', [App\Http\Controllers\Admin\MainController::class, 'loadProduct']);
@@ -109,3 +111,7 @@ Route::get('/reset-password/{token}', [ForgetPassword::class, 'resetPassword'])
 
 Route::post('reset-password', [ForgetPassword::class, 'resetPasswordPost'])
     ->name("reset.passwordpost");
+// LOGIN BY GOOGLE
+Route::get('auth/google', [LoginGGControler::class, 'redirectToGoogle'])
+    ->name('login.google');
+Route::get('auth/google/callback', [LoginGGControler::class, 'handleGoogleCallback']);
