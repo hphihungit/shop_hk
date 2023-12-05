@@ -13,11 +13,6 @@ use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\LinkedinController;
 use App\Http\Controllers\Admin\Users\RegisterController;
 use App\Http\Controllers\CartController;
-<<<<<<< HEAD
-=======
-use App\Http\Services\Account\AccountService;
-use App\Http\Controllers\Admin\LoginGGControler;
->>>>>>> 1d546c11506e5450dd03d8a5d46baf4526e3b559
 
 Route::get('admin/users/login', [LoginController::class, 'index'])->name('login');
 Route::get('admin/users/resetpassword', [LoginController::class, 'ressetPassword']);
