@@ -76,7 +76,7 @@ Route::middleware(['auth', 'checkUserRole:1'])->group(function () {
 // Route::middleware(['auth', 'checkUserRole:2'])->group(function () {
 // });
 
-Route::middleware(['auth', 'checkUserRole:2'])->group(function () {
+Route::middleware(['auth', 'checkUserRole:1,2'])->group(function () {
     Route::get('/', [MainController::class, 'indexUser'])->name('home');
 });
 Route::get('/search', [App\Http\Controllers\ProductController::class, 'search']);
