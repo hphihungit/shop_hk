@@ -16,7 +16,7 @@
         <p>Whether you're in the mood for a classic latte or something
           more unique like a lavender honey cappuccino, we have a drink to suit your taste</p>
         <div class="social-icons">
-          <a href=""><i class='bx bxl-linkedin-square'></i></a>
+          <a href="{{ route('login.linkedin') }}"><i class='bx bxl-linkedin-square'></i></a>
           <a href=""><i class='bx bxl-facebook-square'></i></a>
           <a href=""><i class='bx bxl-instagram-alt'></i></a>
           <a href=""><i class='bx bxl-gmail'></i></a>
@@ -64,6 +64,7 @@
           <div class=" login-register">
             <p>Don't have an account? <a href="/admin/users/register" class="login-link">Sign Up</a> </p>
           </div>
+          
           @csrf
         </form>
       </div>

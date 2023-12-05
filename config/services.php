@@ -35,4 +35,10 @@ return [
         'redirect' => 'http://127.0.0.1:8000/auth/google/callback',
     ],
 
+    'linkedin' => [
+        'client_id' => '86yvb0mkpsgjws',
+        'client_secret' => '5VP9EYKrOk08PL0q',
+        'redirect' => 'http://127.0.0.1:8000/auth/linkedin/callback',
+    ],
+
 ];
