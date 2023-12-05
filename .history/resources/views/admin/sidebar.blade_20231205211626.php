@@ -105,7 +105,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/users/login">
-              <i class="mdi mdi-logout menu-icon"></i>
+              <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">Đăng xuất</span>
             </a>
           </li>
