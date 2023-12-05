@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class FacebookController extends Controller
+{
+    public function facebookpage() {
+        return Socialite::driver('facebook')->redirect('/)';
+    }
+}
