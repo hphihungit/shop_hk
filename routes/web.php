@@ -13,6 +13,11 @@ use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\LinkedinController;
 use App\Http\Controllers\Admin\Users\RegisterController;
 use App\Http\Controllers\CartController;
+<<<<<<< HEAD
+=======
+use App\Http\Services\Account\AccountService;
+use App\Http\Controllers\Admin\LoginGGControler;
+>>>>>>> 1d546c11506e5450dd03d8a5d46baf4526e3b559
 
 Route::get('admin/users/login', [LoginController::class, 'index'])->name('login');
 Route::get('admin/users/resetpassword', [LoginController::class, 'ressetPassword']);
@@ -21,7 +26,7 @@ Route::post('admin/users/login/store', [LoginController::class, 'store']);
 Route::get('admin/users/register', [RegisterController::class, 'index'])->name('register');
 Route::post('admin/users/register/store', [RegisterController::class, 'store']);
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'checkUserRole:1'])->group(function () {
     Route::prefix('admin')->group(function () {
         // //
         // Route::get('/', [AuthenController::class, 'checkUser']);
@@ -29,7 +34,9 @@ Route::middleware(['auth'])->group(function () {
 
         Route::prefix('accounts')->group(function () {
             Route::get('list', [AccountController::class, 'show']);
-            Route::get('edit{menu}', [AccountController::class, 'edit']);
+            Route::get('edit/{account}', [AccountController::class, 'showedit']);
+            Route::post('edit/{account}', [AccountController::class, 'edit']);
+            Route::DELETE('destroy', [AccountController::class, 'delete'])->name('users.delete');
         });
 
         #Menus
@@ -76,11 +83,14 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth', 'checkUserRole:2'])->group(function () {
     Route::get('/', [MainController::class, 'indexUser'])->name('home');
 });
+<<<<<<< HEAD
 
 Route::get('auth/linkedin', [LinkedinController::class, 'redirectToLinkedin'])->name('login.linkedin');
 Route::get('auth/linkedin/callback', [LinkedinController::class, 'handleLinkedinCallback']);
 
 //Search
+=======
+>>>>>>> 1d546c11506e5450dd03d8a5d46baf4526e3b559
 Route::get('/search', [App\Http\Controllers\ProductController::class, 'search']);
 
 Route::post('/services/load-product', [App\Http\Controllers\Admin\MainController::class, 'loadProduct']);
@@ -113,3 +123,7 @@ Route::get('/reset-password/{token}', [ForgetPassword::class, 'resetPassword'])
 
 Route::post('reset-password', [ForgetPassword::class, 'resetPasswordPost'])
     ->name("reset.passwordpost");
+// LOGIN BY GOOGLE
+Route::get('auth/google', [LoginGGControler::class, 'redirectToGoogle'])
+    ->name('login.google');
+Route::get('auth/google/callback', [LoginGGControler::class, 'handleGoogleCallback']);

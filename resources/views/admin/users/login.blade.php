@@ -54,7 +54,14 @@
 
           <button type="submit">Log In</button>
 
-          <div class="login-register">
+          <div class="google-btn">
+            <div class="google-icon-wrapper">
+              <img class="google-icon" src="https://i.pinimg.com/originals/74/65/f3/7465f30319191e2729668875e7a557f2.png" />
+            </div>
+            <a class="btn-text" href="{{ route('login.google') }}">Continue With Google</a>
+          </div>
+
+          <div class=" login-register">
             <p>Don't have an account? <a href="/admin/users/register" class="login-link">Sign Up</a> </p>
           </div>
           

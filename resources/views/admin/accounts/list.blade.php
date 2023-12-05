@@ -40,7 +40,6 @@
                                             <a class="btn btn-primary btn-sm" href="/admin/accounts/edit/{{ $account->id }}">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </a>
-
                                             <a href="#" class="btn btn-danger btn-sm" onclick="removeRow('{{ $account->id }}', '/admin/accounts/destroy')">
                                                 <i class="fas fa-trash"></i>
                                             </a>

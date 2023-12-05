@@ -24,7 +24,11 @@ class User extends Authenticatable
         'email',
         'password',
         'phone_number',
+<<<<<<< HEAD
         'linkedin_id',
+=======
+        'google_id'
+>>>>>>> 1d546c11506e5450dd03d8a5d46baf4526e3b559
     ];
 
     /**
