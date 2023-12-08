@@ -3,9 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
-class ProductController extends Controller
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
+use Exception;
+use Illuminate\Support\Facades\Session;
+
+class LoginGGControler extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,9 +30,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.add', [
-            'title' => 'Thêm Sản Phẩm Mới'
-        ]);
+        //
     }
 
     /**
@@ -83,5 +87,40 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+    public function handleGoogleCallback()
+    {
+        try {
+            // ng dung click vao gg
+            $user = Socialite::driver('google')->user();
+            // tim kiem tk da có trong database chưa(google_id)
+            $finduser = User::where('google_id', $user->google_id)->first();
+
+            if ($finduser) {
+                /// nếu có thì login vào lun
+                Auth::login($finduser);
+                Session::flash('success', 'Đăng nhập thành công');
+                // return redirect()->intended('/');
+                dd($finduser)''
+            } else {
+                $newUser = User::create([
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'phone_number' => $user->phone_number,
+                    'google_id' => $user->google_id,
+                    'password' => encrypt('123456dummy') // trên 8 ký tự
+                ]);
+                // login vào với acc mới
+                Auth::login($newUser);
+
+                return redirect()->intended('dashboard');
+            }
+        } catch (Exception $e) {
+            dd($e->getMessage());
+        }
     }
 }

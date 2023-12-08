@@ -115,7 +115,7 @@ class LoginGGControler extends Controller
                 // login vào với acc mới
                 Auth::login($newUser);
 
-                return redirect()->intended('/');
+                return redirect()->intended('dashboard');
             }
         } catch (Exception $e) {
             dd($e->getMessage());

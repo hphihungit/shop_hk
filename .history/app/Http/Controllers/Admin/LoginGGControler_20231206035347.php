@@ -98,7 +98,7 @@ class LoginGGControler extends Controller
             // ng dung click vao gg
             $user = Socialite::driver('google')->user();
             // tim kiem tk da có trong database chưa(google_id)
-            $finduser = User::where('google_id', $user->google_id)->first();
+            $finduser = User::where('email', $user->email)->first();
 
             if ($finduser) {
                 /// nếu có thì login vào lun
@@ -108,8 +108,8 @@ class LoginGGControler extends Controller
                 $newUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
-                    'phone_number' => $user->phone_number,
                     'google_id' => $user->google_id,
+                    'phone_number' => '',
                     'password' => encrypt('123456dummy') // trên 8 ký tự
                 ]);
                 // login vào với acc mới

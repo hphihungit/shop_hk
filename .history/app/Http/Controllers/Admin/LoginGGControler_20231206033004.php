@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Exception;
-use Illuminate\Support\Facades\Session;
+
 
 class LoginGGControler extends Controller
 {
@@ -115,7 +115,7 @@ class LoginGGControler extends Controller
                 // login vào với acc mới
                 Auth::login($newUser);
 
-                return redirect()->intended('/');
+                return redirect()->intended('dashboard');
             }
         } catch (Exception $e) {
             dd($e->getMessage());

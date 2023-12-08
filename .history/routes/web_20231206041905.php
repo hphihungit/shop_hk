@@ -11,7 +11,6 @@ use App\Http\Controllers\AuthenController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\LinkedinController;
-use App\Http\Controllers\Admin\LoginFBController;
 use App\Http\Controllers\Admin\Users\RegisterController;
 use App\Http\Controllers\Admin\LoginGGControler;
 use App\Http\Controllers\CartController;
@@ -119,6 +118,6 @@ Route::get('auth/google', [LoginGGControler::class, 'redirectToGoogle'])
     ->name('login.google');
 Route::get('auth/google/callback', [LoginGGControler::class, 'handleGoogleCallback']);
 
-Route::get('auth/facebook', [LoginFBController::class, 'redirect'])
-    ->name('login.facebook');
-Route::get('auth/facebook/callback', [LoginFBController::class, 'callback']);
+Route::get('auth/facebook', [LoginGGControler::class, 'redirect'])
+    ->name('login.google');
+Route::get('auth/google/callback', [LoginGGControler::class, 'handleGoogleCallback']);

@@ -36,10 +36,10 @@ return [
         'redirect' => 'http://127.0.0.1:8000/auth/google/callback',
     ],
 
-    'facebook' => [
-        'client_id' => '712632437212770',
-        'client_secret' => '06b1ccdbe2c15877516558caf31302e8',
-        'redirect' => 'http://127.0.0.1:8000/auth/facebook/callback',
-    ],
 
+    'linkedin' => [
+        'client_id' => '86yvb0mkpsgjws',
+        'client_secret' => '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',
+        'redirect' => 'http://127.0.0.1:8000/auth/google/callback',
+    ],
 ];

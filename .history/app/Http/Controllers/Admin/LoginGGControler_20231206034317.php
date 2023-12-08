@@ -103,7 +103,9 @@ class LoginGGControler extends Controller
             if ($finduser) {
                 /// nếu có thì login vào lun
                 Auth::login($finduser);
-                return redirect()->intended('/');
+                Session::flash('success', 'Đăng nhập thành công');
+                // return redirect()->intended('/');
+                dd($finduser);
             } else {
                 $newUser = User::create([
                     'name' => $user->name,
@@ -115,7 +117,7 @@ class LoginGGControler extends Controller
                 // login vào với acc mới
                 Auth::login($newUser);
 
-                return redirect()->intended('/');
+                return redirect()->intended('dashboard');
             }
         } catch (Exception $e) {
             dd($e->getMessage());

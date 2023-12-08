@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Exception;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Contracts\Session\Session;
 
 class LoginGGControler extends Controller
 {
@@ -103,6 +103,7 @@ class LoginGGControler extends Controller
             if ($finduser) {
                 /// nếu có thì login vào lun
                 Auth::login($finduser);
+                Session::flash('success', 'Đăng nhập thành công');
                 return redirect()->intended('/');
             } else {
                 $newUser = User::create([
@@ -115,7 +116,7 @@ class LoginGGControler extends Controller
                 // login vào với acc mới
                 Auth::login($newUser);
 
-                return redirect()->intended('/');
+                return redirect()->intended('dashboard');
             }
         } catch (Exception $e) {
             dd($e->getMessage());
