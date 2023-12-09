@@ -40,5 +40,10 @@ return [
         'client_secret' => '5VP9EYKrOk08PL0q',
         'redirect' => 'http://127.0.0.1:8000/auth/linkedin/callback',
     ],
+    'facebook' => [
+        'client_id' => '888239139356075',
+        'client_secret' => 'daafbc239523c7431a36c789fcefc33f',
+        'redirect' => 'http://127.0.0.1:8000/auth/facebook/callback',
+    ],
 
 ];

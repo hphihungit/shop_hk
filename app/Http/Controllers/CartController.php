@@ -7,18 +7,28 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Services\CartService;
 use App\Models\Momo;
 use App\Models\VNpay;
+use App\Models\User;
+use App\Http\Services\Account\AccountService;
 
 class CartController extends Controller
 {
     protected $cartService;
+    protected $user;
 
-    public function __construct(CartService $cartService)
-    {
+    public function __construct(
+        CartService $cartService,
+        AccountService $user
+    ) {
         $this->cartService = $cartService;
+        $this->user = $user;
     }
 
     public function index(Request $request)
     {
+        if (Session::has('login_required') && Session::get('login_required')) {
+            $message = Session::get('message');
+            return view('admin.users.login')->with('message', $message);
+        }
         $result = $this->cartService->create($request);
 
         if ($result === false) {
@@ -35,6 +45,7 @@ class CartController extends Controller
         return view('carts.list', [
             'title' => 'Giỏ Hàng',
             'products' => $products,
+            'user' => $this->user->show(),
             'carts' => Session::get('carts')
         ]);
     }
@@ -53,6 +64,11 @@ class CartController extends Controller
     }
     public function addCart(Request $request)
     {
+        if (Session::has('login_required') && Session::get('login_required')) {
+            $message = Session::get('message');
+            return view('admin.users.login')->with('message', $message);
+        }
+
         $this->cartService->addCart($request);
 
         return redirect()->back();

@@ -13,6 +13,9 @@ use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\LinkedinController;
 use App\Http\Controllers\Admin\Users\RegisterController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\Admin\LoginGGControler;
+use App\Http\Controllers\Admin\LoginFBController;
+
 
 Route::get('admin/users/login', [LoginController::class, 'index'])->name('login');
 Route::get('admin/users/resetpassword', [LoginController::class, 'ressetPassword']);
@@ -75,9 +78,7 @@ Route::middleware(['auth', 'checkUserRole:1'])->group(function () {
 // Route::middleware(['auth', 'checkUserRole:2'])->group(function () {
 // });
 
-Route::middleware(['auth', 'checkUserRole:1,2'])->group(function () {
-    Route::get('/', [MainController::class, 'indexUser'])->name('home');
-});
+Route::get('/', [MainController::class, 'indexUser'])->name('home');
 
 Route::get('auth/linkedin', [LinkedinController::class, 'redirectToLinkedin'])->name('login.linkedin');
 Route::get('auth/linkedin/callback', [LinkedinController::class, 'handleLinkedinCallback']);
@@ -90,11 +91,13 @@ Route::post('/services/load-product', [App\Http\Controllers\Admin\MainController
 Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']);
 Route::get('san-pham/{id}-{slug}.html', [App\Http\Controllers\ProductController::class, 'index']);
 //CART 
-Route::post('add-cart', [App\Http\Controllers\CartController::class, 'index']);
+Route::post('add-cart', [App\Http\Controllers\CartController::class, 'index'])->middleware('cart');
 Route::get('carts', [App\Http\Controllers\CartController::class, 'show']);
 Route::post('update-cart', [App\Http\Controllers\CartController::class, 'update']);
 Route::get('carts/delete/{id}', [App\Http\Controllers\CartController::class, 'remove']);
-Route::post('carts', [App\Http\Controllers\CartController::class, 'addCart']);
+
+Route::post('carts', [App\Http\Controllers\CartController::class, 'addCart'])->middleware('cart');
+
 Route::get('thank', [App\Http\Controllers\CartController::class, 'show2']);
 //Payment
 Route::post('vnpay-payment', [App\Http\Controllers\CartController::class, 'payment_vnpay'])
@@ -119,3 +122,6 @@ Route::post('reset-password', [ForgetPassword::class, 'resetPasswordPost'])
 Route::get('auth/google', [LoginGGControler::class, 'redirectToGoogle'])
     ->name('login.google');
 Route::get('auth/google/callback', [LoginGGControler::class, 'handleGoogleCallback']);
+// LOGIN BY FACEBOOK
+Route::get('auth/facebook', [LoginFBController::class, 'redirectToFacebook'])->name('auth.facebook');
+Route::get('auth/facebook/callback', [LoginFBController::class, 'handleFacebookCallback']);

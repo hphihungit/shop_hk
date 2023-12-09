@@ -61,10 +61,12 @@
             <a class="btn-text" href="{{ route('login.google') }}">Continue With Google</a>
           </div>
 
+          <a class="btn-text" href="{{ route('auth.facebook') }}">Continue With Facebook</a>
+
           <div class=" login-register">
             <p>Don't have an account? <a href="/admin/users/register" class="login-link">Sign Up</a> </p>
           </div>
-          
+
           @csrf
         </form>
       </div>

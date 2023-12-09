@@ -106,7 +106,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 .container {max-width: 1380px;}
 
 @media (max-width: 1600px) {
-  .container {max-width: 1200px;}
+  .container {max-width: 1250px;}
 }
 
 /*------------------------------------------------------------------
@@ -175,7 +175,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
 }
-
+.user{
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+}
 .symbol-btn-back-to-top {
   font-size: 25px;
   color: white;
