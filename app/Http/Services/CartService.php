@@ -100,10 +100,11 @@ class CartService
 
             //Send Mail
             Mail::send(
-                'mail.success', ['customer' => $customer],
-                function($email) use ($customer){
+                'mail.success',
+                ['customer' => $customer],
+                function ($email) use ($customer) {
                     $email->to($customer->email);
-                    $email->subject($customer->name. ' ' .'Cảm ơn đã lựa chọn chúng tôi');
+                    $email->subject($customer->name . ' ' . 'Cảm ơn đã lựa chọn chúng tôi');
                 }
             );
 
@@ -114,7 +115,6 @@ class CartService
             Session::flash('error', 'Đặt Hàng Lỗi, Vui lòng thử lại sau');
             return false;
         }
-
         return true;
     }
 

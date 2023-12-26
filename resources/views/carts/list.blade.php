@@ -2,7 +2,6 @@
 
 @section('content')
 <form class="bg0 p-t-130 " method="post">
-    @include('admin.alert')
 
     @if (count($products) != 0)
     <div class="container">
@@ -139,6 +138,13 @@
         </div>
     </div>
 </form>
+@if(isset($message))
+<div class="alert alert-info">
+    {{ $message }}
+    <a href="{{ route('login') }}" class="btn btn-primary">Oke</a>
+</div>
+@endif
+
 <!-- <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
     Payment Online
 </button> -->

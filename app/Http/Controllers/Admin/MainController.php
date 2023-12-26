@@ -8,6 +8,8 @@ use App\Http\Services\Menu\MenuService;
 use App\Http\Services\Slider\SliderService;
 use App\Http\Services\Product\ProductService;
 use App\Http\Services\Banner\BannerService;
+use App\Http\Services\Account\AccountService;
+use App\Models\User;
 
 class MainController extends Controller
 {
@@ -15,13 +17,20 @@ class MainController extends Controller
     protected $menu;
     protected $product;
     protected $banner;
+    protected $user;
 
-    public function __construct(MenuService $menu, SliderService $slider, ProductService  $product, BannerService $banner)
-    {
+    public function __construct(
+        MenuService $menu,
+        SliderService $slider,
+        ProductService  $product,
+        BannerService $banner,
+        AccountService $user
+    ) {
         $this->menu = $menu;
         $this->slider = $slider;
         $this->product = $product;
         $this->banner = $banner;
+        $this->user = $user;
     }
     public function indexAdmin()
     {
@@ -29,6 +38,7 @@ class MainController extends Controller
             'title' => 'Trang quản trị Admin'
         ]);
     }
+
     public function indexUser()
     {
         return view('home', [
@@ -36,7 +46,8 @@ class MainController extends Controller
             'menus' => $this->menu->show(),
             'sliders' => $this->slider->show(),
             'products' => $this->product->get(),
-            'banners' => $this->banner->show()
+            'banners' => $this->banner->show(),
+            'user' => $this->user->show(),
         ]);
     }
     public function loadProduct(Request $request)

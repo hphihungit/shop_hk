@@ -3,6 +3,7 @@
 namespace App\Http\Services\Account;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class AccountService
@@ -21,6 +22,14 @@ class AccountService
         }
 
         return false;
+    }
+    public function show()
+    {
+        $user = Auth::user();
+
+        if ($user) {
+            return ['name' => $user->name];
+        }
     }
     public function update($request, $user): bool
     {
