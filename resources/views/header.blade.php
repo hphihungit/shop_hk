@@ -22,10 +22,15 @@
                             <a href="" class="about.html"> Thông tin </a>
                         </li>
 
-
+                        @if(Auth::check())
+                        <li>
+                            <a href="logout" class="contact.html">Đăng xuất</a>
+                        </li>
+                        @else
                         <li>
                             <a href="/admin/users/login" class="contact.html">Đăng nhập</a>
                         </li>
+                        @endif
 
 
 

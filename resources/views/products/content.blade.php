@@ -29,7 +29,7 @@
                     <div class="wrap-slick3 flex-sb flex-w">
                         <div class="wrap-slick3-dots">
                             <!-- Cot anh ben trai -->
-                            <ul class="slick3-dots" role="tablist" style="">
+                            <ul class="slick3-dots" role="tablist">
                                 <li class="slick-active" role="presentation">
                                     <img src="{{ $product->thumb }}">
                                     <div class="slick3-dot-overlay">
@@ -40,12 +40,12 @@
                         </div>
 
                         <div class="wrap-slick3-arrows flex-sb-m flex-w">
-                            <button class="arrow-slick3 prev-slick3 slick-arrow" style="">
+                            <button class="arrow-slick3 prev-slick3 slick-arrow">
                                 <i class="fa fa-angle-left" aria-hidden="true">
 
                                 </i>
                             </button>
-                            <button class="arrow-slick3 next-slick3 slick-arrow" style="">
+                            <button class="arrow-slick3 next-slick3 slick-arrow">
                                 <i class="fa fa-angle-right" aria-hidden="true">
 
                                 </i>

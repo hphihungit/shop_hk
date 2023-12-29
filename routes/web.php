@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\LoginFBController;
 
 
 Route::get('admin/users/login', [LoginController::class, 'index'])->name('login');
+Route::get('logout', [AuthenController::class, 'logout'])->name('logout');
 Route::get('admin/users/resetpassword', [LoginController::class, 'ressetPassword']);
 Route::post('admin/users/login/store', [LoginController::class, 'store']);
 
