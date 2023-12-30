@@ -68,7 +68,6 @@ class CartController extends Controller
             $message = Session::get('message');
             return view('admin.users.login')->with('message', $message);
         }
-
         $this->cartService->addCart($request);
 
         return redirect()->back();
@@ -227,11 +226,11 @@ class CartController extends Controller
         $total = $request->input('total');
         $name_product = $request->input('name_product');
 
-        $orderInfo = 'aaêâăê';
+        $orderInfo = $name_product;
         $partnerCode = 'MOMOBKUN20180529';
         $accessKey = 'klm05TvNBzhg7h7j';
         $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
-        $amount =  '100000';
+        $amount =  $total;
         $orderId = time() . "";
         // khi thanh toán thành công -> trả về url này
         $redirectUrl = "http://127.0.0.1:8000/thank";
