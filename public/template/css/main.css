@@ -291,7 +291,7 @@
 
 .logo img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 80px;
   color: white;
 }
 
@@ -336,7 +336,7 @@
 .main-menu > li > a {
   font-family: Poppins-Medium;
   font-size: 16px;
-  color: white;
+  color: #be9c79;
   padding: 5px 0px;
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
@@ -407,7 +407,7 @@
 /*---------------------------------------------*/
 .main-menu > li:hover > a {
   text-decoration: none;
-  color: #be9c79;
+  color: #fff;
 }
 
 .main-menu > li:hover > .sub-menu {
@@ -1179,7 +1179,7 @@
 }
 
 .item-slick1 {
-  height: calc(100vh - 40px);
+  height: calc(100vh - 200px);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1197,6 +1197,10 @@
   .item-slick1 {
     height: calc(100vh - 70px) !important;
   }
+}
+
+.main-menu {
+  white-space: nowrap;
 }
 
 .arrow-slick1 {
@@ -1988,7 +1992,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*---------------------------------------------*/
 .block1-txt:hover {
-  background-color: rgba(103,117,214,0.8);
+  background-color: #be9c79;
 }
 
 .block1-txt:hover .block1-txt-child2 {
@@ -3044,7 +3048,7 @@ input.num-product::-webkit-inner-spin-button {
 
 .hov-cl0:hover {color: #fff;}
 .hov-bg0:hover {background-color: #fff;}
-.hov-cl1:hover {color: #717fe0;}
+.hov-cl1:hover {color: #be9c79;}
 .hov-bg1:hover {background-color: #717fe0;}
 
 /*---------------------------------------------*/

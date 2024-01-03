@@ -36,6 +36,20 @@
 
                                     </div>
                                 </li>
+
+                                <li class="slick-active" role="presentation">
+                                    <img src="\storage\uploads\2023\12\14\lacdetail.png">
+                                    <div class="slick3-dot-overlay">
+
+                                    </div>
+                                </li>
+
+                                <li class="slick-active" role="presentation">
+                                    <img src="\storage\uploads\2023\12\14\lacdetail1.png">
+                                    <div class="slick3-dot-overlay">
+
+                                    </div>
+                                </li>
                             </ul>
                         </div>
 

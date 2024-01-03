@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Exception;
-
+use Illuminate\Support\Facades\Session;
 
 class LoginGGControler extends Controller
 {

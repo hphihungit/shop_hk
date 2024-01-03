@@ -11,10 +11,10 @@ use App\Http\Controllers\AuthenController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\LinkedinController;
-use App\Http\Controllers\Admin\Users\RegisterController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\Admin\LoginGGControler;
 use App\Http\Controllers\Admin\LoginFBController;
+use App\Http\Controllers\Admin\Users\RegisterController;
+use App\Http\Controllers\Admin\LoginGGControler;
+use App\Http\Controllers\CartController;
 
 
 Route::get('admin/users/login', [LoginController::class, 'index'])->name('login');
@@ -81,9 +81,6 @@ Route::middleware(['auth', 'checkUserRole:1'])->group(function () {
 
 Route::get('/', [MainController::class, 'indexUser'])->name('home');
 
-Route::get('auth/linkedin', [LinkedinController::class, 'redirectToLinkedin'])->name('login.linkedin');
-Route::get('auth/linkedin/callback', [LinkedinController::class, 'handleLinkedinCallback']);
-
 //Search
 Route::get('/search', [App\Http\Controllers\ProductController::class, 'search']);
 
@@ -123,6 +120,7 @@ Route::post('reset-password', [ForgetPassword::class, 'resetPasswordPost'])
 Route::get('auth/google', [LoginGGControler::class, 'redirectToGoogle'])
     ->name('login.google');
 Route::get('auth/google/callback', [LoginGGControler::class, 'handleGoogleCallback']);
-// LOGIN BY FACEBOOK
-Route::get('auth/facebook', [LoginFBController::class, 'redirectToFacebook'])->name('auth.facebook');
-Route::get('auth/facebook/callback', [LoginFBController::class, 'handleFacebookCallback']);
+
+Route::get('auth/facebook', [LoginFBController::class, 'redirect'])
+    ->name('login.facebook');
+Route::get('auth/facebook/callback', [LoginFBController::class, 'callback']);

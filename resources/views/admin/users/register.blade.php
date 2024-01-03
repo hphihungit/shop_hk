@@ -12,12 +12,12 @@
 <body>
   <div class="wrapper">
     <form action="/admin/users/register/store" method="post">
-      <h1>Welcome</h1>
+      <h1>Đăng ký</h1>
       <div style="text-align: left;">
         @include('admin.alert')
       </div>
       <div class="input-box">
-        <input type="text" class="form-control" placeholder="Full name" name="name">
+        <input type="text" class="form-control" placeholder="Họ tên" name="name">
         <i class='bx bxs-user'></i>
       </div>
       <div class="input-box">
@@ -25,17 +25,17 @@
         <i class='bx bxs-envelope bx-rotate-90'></i>
       </div>
       <div class="input-box">
-        <input type="password" class="form-control" placeholder="Password" name="password">
+        <input type="password" class="form-control" placeholder="Mật khẩu" name="password">
         <i class='bx bxs-lock-alt'></i>
       </div>
       <div class="input-box">
-        <input type="text" class="form-control" placeholder="Phone Number" name="phone_number">
+        <input type="text" class="form-control" placeholder="Số điện thoại" name="phone_number">
         <i class='bx bxs-phone bx-rotate-90'></i>
       </div>
 
-      <button type="submit" class="btn">Register</button>
+      <button type="submit" class="btn">Đăng ký</button>
       <div class="register-link">
-        <p>Already have an account? <a href="/admin/users/login">Log In</a></p>
+        <p>Bạn đã có tài khoản? <a href="/admin/users/login">Đăng nhập</a></p>
       </div>
       @csrf
     </form>

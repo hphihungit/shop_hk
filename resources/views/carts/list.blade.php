@@ -174,7 +174,7 @@
 
 
 @else
-<div class="text-center">
+<div style="min-height: 139px;" class="text-center">
     <h2>Giỏ hàng trống</h2>
 </div>
 @endif

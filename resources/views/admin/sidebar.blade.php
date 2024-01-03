@@ -1,5 +1,6 @@
-<nav class="sidebar sidebar-offcanvas" id="sidebar">
+<nav style="background-color: #ccc;" class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="text-center sidebar-brand-wrapper d-flex align-items-center">
+        <a class="sidebar-brand brand-logo" href="index.html"><img style="max-width: 120p; height: 120px;" src="/template/images/logo.png" alt="logo"></a>
         <a class="sidebar-brand brand-logo-mini pl-4 pt-3" href="index.html"><img src="/template/admin/assets/images/logo-mini.svg" alt="logo"></a>
     </div>
     <ul class="nav">
@@ -11,7 +12,8 @@
                     <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column pr-3">
-                    <span class="font-weight-medium mb">Admin</span>
+                    <span class="font-weight-medium mb-2">Phi Hung</span>
+                    <span class="font-weight-normal">$8,753.00</span>
                 </div>
             </a>
         </li>
@@ -99,6 +101,12 @@
                     </li>
                 </ul>
             </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/users/login">
+                <i class="mdi mdi-logout menu-icon"></i>
+                <span class="menu-title">Đăng xuất</span>
+            </a>
         </li>
     </ul>
 </nav>

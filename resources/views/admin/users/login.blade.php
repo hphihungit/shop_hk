@@ -2,80 +2,94 @@
 <html lang="en">
 
 <head>
-  @include('admin.users.head')
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/template/css/register.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<script src="./public/js/jquery-3-7-1-min.js"></script>
 
 <body>
-  <div class="background"></div>
-  <div class="container">
-    <!-- <div class="content">
-      <h2 class="ten"><i class='bx bxl-firefox'></i>The K&H Corner Shop</h2>
-      <div class="text-sci">
-        <h2>Welcome <br> <span>To Our Website Coffee.</span> </h2>
-        <p>Whether you're in the mood for a classic latte or something
-          more unique like a lavender honey cappuccino, we have a drink to suit your taste</p>
-        <div class="social-icons">
-          <a href="{{ route('login.linkedin') }}"><i class='bx bxl-linkedin-square'></i></a>
-          <a href=""><i class='bx bxl-facebook-square'></i></a>
-          <a href=""><i class='bx bxl-instagram-alt'></i></a>
-          <a href=""><i class='bx bxl-gmail'></i></a>
+  <div class="wrapper">
+    <form action="/admin/users/login/store" method="post">
+      <h1>Đăng nhập</h1>
+      <div style="text-align: left;">
+        @include('admin.alert')
+      </div>
+      <div class="input-box">
+        <input type="email" id="email" class="form-control" placeholder="Email" name="email">
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" id="password" class="form-control" placeholder="Mật khẩu" name="password">
+        <i class='bx bxs-key'></i>
+      </div>
+
+      <div class="remember-forgot">
+        <label></label>
+        <a href="{{ route('forget.password') }}">Forgot Password</a>
+      </div>
+
+      <button style="margin-bottom: 16px;" type="submit" class="btn">ĐĂNG NHẬP</button>
+
+      <div class="separate">
+        <div class="line"></div>
+        <span class="text_separate">
+          HOẶC
+        </span>
+        <div class="line"></div>
+      </div>
+
+      <div class="different">
+        <div class="btn-social-login">
+          <a class="btn-text" href="{{ route('login.facebook') }}">
+            <img src="/template/images/facebook.png" class="icon" alt="">
+            Facebook
+          </a>
+        </div>
+
+        <div class="btn-social-login">
+          <a class="btn-text" href="{{ route('login.google') }}">
+            <img src="/template/images/google.png" class="icon" alt="">
+            Google
+          </a>
         </div>
       </div>
-    </div> -->
-    <!-- Form login -->
-    <div class="logreg-box">
-      <div class="form-box login">
-        <form class="form" action="/admin/users/login/store" method="post">
-          <h2>Log In</h2>
-          <div class="input-box">
-            <span class="icon">
-              <i class='bx bxl-gmail'></i>
-            </span>
-            <input id="email" type="email" name="email">
-            <label for="">Email</label>
-            <span class="form-message"></span>
-          </div>
 
-          <div class="input-box">
-            <span class="icon">
-              <i class='bx bxs-lock-alt'></i>
-            </span>
-            <input type="password" id="password" name="password">
-            <label for="">Password</label>
-            <span id="password-error" class="error-message"></span> <br>
-            @include('admin.alert')
-          </div> <br>
 
-          <div class="remember-forgot">
-            <label> <input type="checkbox">Remember me</label>
-            <a href="{{ route('forget.password') }}">Forgot Password</a>
-          </div>
+      <<<<<<< HEAD <div class="remember-forgot">
+        <label> <input type="checkbox">Remember me</label>
+        <a href="{{ route('forget.password') }}">Forgot Password</a>
+  </div>
 
-          <button type="submit">Log In</button>
+  <button type="submit">Log In</button>
 
-          <div class="google-btn">
-            <div class="google-icon-wrapper">
-              <img class="google-icon" src="https://i.pinimg.com/originals/74/65/f3/7465f30319191e2729668875e7a557f2.png" />
-            </div>
-            <a class="btn-text" href="{{ route('login.google') }}">Continue With Google</a>
-          </div>
-
-          <div class="facebook-btn">
-            <div class="facebook-icon-wrapper">
-              <img class="facebook-icon" src="https://static-00.iconduck.com/assets.00/facebook-icon-512x512-seb542ju.png" />
-            </div>
-            <a class="btn-text-facebook" href="{{ route('auth.facebook') }}">Continue With Facebook</a>
-          </div>
-          <div class=" login-register">
-            <p>Don't have an account? <a href="/admin/users/register" class="login-link">Sign Up</a> </p>
-          </div>
-
-          @csrf
-        </form>
-      </div>
-      <!-- registist -->
+  <div class="google-btn">
+    <div class="google-icon-wrapper">
+      <img class="google-icon" src="https://i.pinimg.com/originals/74/65/f3/7465f30319191e2729668875e7a557f2.png" />
     </div>
+    <a class="btn-text" href="{{ route('login.google') }}">Continue With Google</a>
+  </div>
+
+  <div class="facebook-btn">
+    <div class="facebook-icon-wrapper">
+      <img class="facebook-icon" src="https://static-00.iconduck.com/assets.00/facebook-icon-512x512-seb542ju.png" />
+    </div>
+    <a class="btn-text-facebook" href="{{ route('auth.facebook') }}">Continue With Facebook</a>
+  </div>
+  <div class=" login-register">
+    <p>Don't have an account? <a href="/admin/users/register" class="login-link">Sign Up</a> </p>
+  </div>
+
+  @csrf
+  </form>
+  =======
+  <div class="register-link">
+    <p>Bạn chưa có tài khoản? <a href="/admin/users/register">Đăng ký</a></p>
+    >>>>>>> 9283b5135e24c90ec2f5d84acb168a9be1b75824
+  </div>
+  @csrf
+  </form>
   </div>
 </body>
 

@@ -24,7 +24,7 @@
       height: 18px;
     }
     
-    .btn-text {
+    .btn {
       float: right;
       margin: 11px 90px 0 0;
         color: #000000;
@@ -186,7 +186,7 @@ body {
 .background {
     width: 100%;
     height: 100vh;
-    background: url(../images/login.jpg) no-repeat;
+    background: url(../images/background.png) no-repeat;
     background-size: cover;
     background-position: center;
     filter: blur(10px);

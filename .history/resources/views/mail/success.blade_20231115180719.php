@@ -1,1 +1,0 @@
-<h1>Mua hang thành công</h1>
