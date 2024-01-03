@@ -97,23 +97,43 @@ class LoginGGControler extends Controller
         try {
             // ng dung click vao gg
             $user = Socialite::driver('google')->user();
+
             // tim kiem tk da có trong database chưa(google_id)
-            $finduser = User::where('google_id', $user->google_id)->first();
+            $finduser = User::where('google_id', $user->id)->first();
 
             if ($finduser) {
-                /// nếu có thì login vào lun
+                // Nếu có thì login vào luôn
                 Auth::login($finduser);
                 return redirect()->intended('/');
             } else {
-                $newUser = User::create([
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'phone_number' => $user->phone_number,
-                    'google_id' => $user->google_id,
-                    'password' => encrypt('123456dummy') // trên 8 ký tự
-                ]);
-                // login vào với acc mới
-                Auth::login($newUser);
+                // Kiểm tra xem email đã tồn tại chưa
+                $existingUser = User::where('email', $user->email)->first();
+
+                if ($existingUser) {
+                    // Người dùng đã tồn tại, có thể thực hiện các bước khác nếu cần
+                    // Ví dụ: cập nhật thông tin người dùng từ Google
+                    $existingUser->name = $user->name;
+                    $existingUser->google_id = $user->id;
+                    // Cập nhật các trường thông tin khác nếu cần
+                    $existingUser->save();
+
+                    // Đăng nhập người dùng đã tồn tại
+                    Auth::login($existingUser);
+
+                    return redirect()->intended('/');
+                } else {
+                    // Người dùng không tồn tại, tạo mới
+                    $newUser = User::create([
+                        'name' => $user->name,
+                        'email' => $user->email,
+                        'phone_number' => "",
+                        'google_id' => $user->id,
+                        'password' => bcrypt('123456dummy'), // trên 8 ký tự
+                    ]);
+
+                    // Login vào với account mới
+                    Auth::login($newUser);
+                }
 
                 return redirect()->intended('/');
             }

@@ -12,15 +12,26 @@
         </div>
 
         <div class="header-cart-content flex-w js-pscroll">
-            @php $sumPriceCart = 0; @endphp
+            @php
+            $sumPriceCart = 0;
+            $carts = Session::get('carts') ?? [];
+            @endphp
+
+            @if (count($carts) > 0)
             <ul class="header-cart-wrapitem w-full">
-                @if (count($products) > 0)
-                @foreach($products as $key => $product)
+                @foreach($carts as $product_id => $qty)
+                {{-- Retrieve the product information based on $product_id --}}
                 @php
+                $product = \App\Models\Product::find($product_id);
+                if (!$product) {
+                // Handle the case where the product is not found
+                continue;
+                }
+
                 $price = \App\Helpers\Helper::price($product->price, $product->price_sale);
-                // cai nay tính tổng tiền , nếu có mã giảm giá thì thì lấy opposite thì lấy giá gốc
                 $sumPriceCart += $product->price_sale != 0 ? $product->price_sale : $product->price;
                 @endphp
+
                 <li class="header-cart-item flex-w flex-t m-b-12">
                     <div class="header-cart-item-img">
                         <img src="{{ $product->thumb }}" alt="IMG">
@@ -29,15 +40,15 @@
                     <div class="header-cart-item-txt p-t-8">
                         <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
                             {{ $product->name }}
+                            <span class="header-cart-item-info">
+                                Price: {!! $price !!}
+                                <br>
+                                Quantity: {{ $qty }}
+                            </span>
                         </a>
-
-                        <span class="header-cart-item-info">
-                            {!! $price !!}
-                        </span>
                     </div>
                 </li>
                 @endforeach
-                @endif
             </ul>
 
             <div class="w-full">
@@ -55,6 +66,14 @@
                     </a>
                 </div>
             </div>
+            @else
+            <p>{{ empty($carts) ? 'No items in the cart' : 'Cart is empty' }}</p>
+            @endif
         </div>
+
+
+
+
+
     </div>
 </div>
