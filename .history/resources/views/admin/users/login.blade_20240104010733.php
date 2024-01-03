@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/template/css/register.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
   <div class="wrapper">
     <form action="/admin/users/login/store" method="post">
@@ -23,11 +24,14 @@
         <input type="password" id="password" class="form-control" placeholder="Mật khẩu" name="password">
         <i class='bx bxs-key'></i>
       </div>
+
       <div class="remember-forgot">
-            <label></label>
-            <a href="{{ route('forget.password') }}">Forgot Password</a>
-          </div>
+        <label></label>
+        <a href="{{ route('forget.password') }}">Forgot Password</a>
+      </div>
+
       <button style="margin-bottom: 16px;" type="submit" class="btn">ĐĂNG NHẬP</button>
+
       <div class="separate">
         <div class="line"></div>
         <span class="text_separate">
@@ -35,6 +39,7 @@
         </span>
         <div class="line"></div>
       </div>
+
       <div class="different">
         <div class="btn-social-login">
           <a class="btn-text" href="{{ route('login.facebook') }}">
@@ -42,18 +47,50 @@
             Facebook
           </a>
         </div>
+
         <div class="btn-social-login">
           <a class="btn-text" href="{{ route('login.google') }}">
-          <img src="/template/images/google.png" class="icon" alt="">
+            <img src="/template/images/google.png" class="icon" alt="">
             Google
           </a>
         </div>
       </div>
-      <div class="register-link">
-        <p>Bạn chưa có tài khoản? <a href="/admin/users/register">Đăng ký</a></p>
-      </div>
-      @csrf
-    </form>
+
+
+      <<<<<<< HEAD <div class="remember-forgot">
+        <label> <input type="checkbox">Remember me</label>
+        <a href="{{ route('forget.password') }}">Forgot Password</a>
+  </div>
+
+  <button type="submit">Log In</button>
+
+  <div class="google-btn">
+    <div class="google-icon-wrapper">
+      <img class="google-icon" src="https://i.pinimg.com/originals/74/65/f3/7465f30319191e2729668875e7a557f2.png" />
+    </div>
+    <a class="btn-text" href="{{ route('login.google') }}">Continue With Google</a>
+  </div>
+
+  <div class="facebook-btn">
+    <div class="facebook-icon-wrapper">
+      <img class="facebook-icon" src="https://static-00.iconduck.com/assets.00/facebook-icon-512x512-seb542ju.png" />
+    </div>
+    <a class="btn-text-facebook" href="{{ route('auth.facebook') }}">Continue With Facebook</a>
+  </div>
+  <div class=" login-register">
+    <p>Don't have an account? <a href="/admin/users/register" class="login-link">Sign Up</a> </p>
+  </div>
+
+  @csrf
+  </form>
+  =======
+  <div class="register-link">
+    <p>Bạn chưa có tài khoản? <a href="/admin/users/register">Đăng ký</a></p>
+    >>>>>>> 9283b5135e24c90ec2f5d84acb168a9be1b75824
+  </div>
+  @csrf
+  </form>
   </div>
 </body>
+
 </html>

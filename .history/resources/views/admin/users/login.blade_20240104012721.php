@@ -24,7 +24,7 @@
         <i class='bx bxs-key'></i>
       </div>
       <div class="remember-forgot">
-            <label></label>
+            <label> <input type="checkbox">Remember me</label>
             <a href="{{ route('forget.password') }}">Forgot Password</a>
           </div>
       <button style="margin-bottom: 16px;" type="submit" class="btn">ĐĂNG NHẬP</button>
