@@ -271,27 +271,27 @@
                         <div class="card-title font-weight-medium"> Business Survey </div>
                         <p class="text-muted"> Lorem ipsum dolor sitadipiscing elit, sed amet do eiusmod tempor we find a new solution </p>
                         <div class="d-flex flex-wrap border-bottom py-2 border-top justify-content-between">
-                            <img class="survey-img mb-lg-3" src="/template/admin/assets/images/dashboard/img_3.jpg" alt="" />
+                            <img class="survey-img mb-lg-3" src="/template/images/b.jpg" alt="" />
                             <div class="pt-2">
-                                <h5 class="mb-0">Villa called Archagel</h5>
+                                <h5 class="mb-0">Coffee Lattee</h5>
                                 <p class="mb-0 text-muted">St, San Diego, CA</p>
-                                <h5 class="mb-0">$600/mo</h5>
+                                <h5 class="mb-0">32.000đ</h5>
                             </div>
                         </div>
                         <div class="d-flex flex-wrap border-bottom py-2 justify-content-between">
-                            <img class="survey-img mb-lg-3" src="/template/admin/assets/images/dashboard/img_1.jpg" alt="" />
+                            <img class="survey-img mb-lg-3" src="/template/images/b.jpg" alt="" />
                             <div class="pt-2">
-                                <h5 class="mb-0">Luxury villa in Hermo</h5>
+                                <h5 class="mb-0">Coffee Lattee</h5>
                                 <p class="mb-0 text-muted">Glendale, CA</p>
-                                <h5 class="mb-0">$900/mo</h5>
+                                <h5 class="mb-0">27.000đ</h5>
                             </div>
                         </div>
                         <div class="d-flex flex-wrap border-bottom py-2 justify-content-between">
-                            <img class="survey-img mb-lg-3" src="/template/admin/assets/images/dashboard/img_2.jpg" alt="" />
+                            <img class="survey-img mb-lg-3" src="/template/images/b.jpg" alt="" />
                             <div class="pt-2">
-                                <h5 class="mb-0">House on the Clarita</h5>
+                                <h5 class="mb-0">Coffee Milk</h5>
                                 <p class="mb-0 text-muted">Business Survey</p>
-                                <h5 class="mb-0">$459/mo</h5>
+                                <h5 class="mb-0">45.000đ</h5>
                             </div>
                         </div>
                         <a class="text-black mt-3 d-block font-weight-medium h6" href="#">View all <i class="mdi mdi-chevron-right"></i></a>

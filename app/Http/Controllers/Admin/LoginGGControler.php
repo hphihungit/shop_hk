@@ -97,7 +97,6 @@ class LoginGGControler extends Controller
         try {
             // ng dung click vao gg
             $user = Socialite::driver('google')->user();
-
             // tim kiem tk da có trong database chưa(google_id)
             $finduser = User::where('google_id', $user->id)->first();
 

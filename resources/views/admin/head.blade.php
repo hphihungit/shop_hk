@@ -1,7 +1,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Breeze Admin</title>
+    <title>Admin-ShopHK</title>
     <link rel="stylesheet" href="/template/admin/assets/vendors/mdi/css/materialdesignicons.min.css" />
     <link rel="stylesheet" href="/template/admin/assets/vendors/flag-icon-css/css/flag-icon.min.css" />
     <link rel="stylesheet" href="/template/admin/assets/vendors/css/vendor.bundle.base.css" />
@@ -24,5 +24,9 @@
             overflow-x: scroll;
             width: 300px;
             display: block;
+        }
+
+        .font-weight-medium {
+            font-size: 18px;
         }
     </style>

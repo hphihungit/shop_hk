@@ -1,11 +1,12 @@
 .google-btn {
     width: 350px;
     height: 42px;
-    background-color: #4285f4;
+    background-color: #ffffff;
     border-radius: 2px;
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
-    margin-top: 10px;
+    margin-top: 13px;
     .google-icon-wrapper {
+        color: black;
       position: absolute;
       margin-top: 1px;
       margin-left: 1px;
@@ -25,7 +26,51 @@
     
     .btn-text {
       float: right;
-      margin: 11px 105px  0 0;
+      margin: 11px 90px 0 0;
+        color: #000000;
+      font-size: 16px;
+      letter-spacing: 0.2px;
+      font-family: "Roboto";
+      text-decoration: none;
+    }
+  
+    &:hover {
+      box-shadow: 0 0 6px #4285f4;
+    }
+  
+    &:active {
+      background: #1669F2;
+    }
+  }
+
+  .facebook-btn {
+    width: 350px;
+    height: 42px;
+    background-color: #4285f4;
+    border-radius: 2px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+    margin-top: 13px;
+    .facebook-icon-wrapper {
+      position: absolute;
+      margin-top: 1px;
+      margin-left: 1px;
+      width: 40px;
+      height: 40px;
+      border-radius: 2px;
+      background-color: #fff;
+    }
+  
+    .facebook-icon {
+      position: absolute;
+      margin-top: 11px;
+      margin-left: 11px;
+      width: 18px;
+      height: 18px;
+    }
+    
+    .btn-text-facebook {
+      float: right;
+      margin: 11px 70px 0 0;
       color: #fff;
       font-size: 16px;
       letter-spacing: 0.2px;
@@ -192,6 +237,7 @@ body {
 
 .content h2 {
     font-size: 40px;
+    color: white;
 }
 
 .content h2 span {
@@ -201,6 +247,8 @@ body {
 .text-sci p {
     font-size: 16px;
     margin: 20px 0;
+    color: white;
+
 }
 
 .social-icons a i {

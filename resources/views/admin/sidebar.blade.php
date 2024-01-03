@@ -1,30 +1,27 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="text-center sidebar-brand-wrapper d-flex align-items-center">
-        <a class="sidebar-brand brand-logo" href="index.html"><img src="/template/admin/assets/images/logo.svg" alt="logo"></a>
         <a class="sidebar-brand brand-logo-mini pl-4 pt-3" href="index.html"><img src="/template/admin/assets/images/logo-mini.svg" alt="logo"></a>
     </div>
     <ul class="nav">
         <li class="nav-item nav-profile">
             <a href="#" class="nav-link">
                 <div class="nav-profile-image">
-                    <img src="/template/admin/assets/images/faces/face1.jpg" alt="profile">
+                    <img src="/template/images/user.png" alt="profile">
                     <span class="login-status online"></span>
                     <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column pr-3">
-                    <span class="font-weight-medium mb-2">Henry Klein</span>
-                    <span class="font-weight-normal">$8,753.00</span>
+                    <span class="font-weight-medium mb">Admin</span>
                 </div>
-                <span class="badge badge-danger text-white ml-3 rounded">3</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/main">
-              <i class="mdi mdi-home menu-icon"></i>
-              <span class="menu-title">Trang Chủ</span>
+                <i class="mdi mdi-home menu-icon"></i>
+                <span class="menu-title">Trang Chủ</span>
             </a>
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="mdi mdi-account-circle menu-icon"></i>
                 <span class="menu-title">Tài khoản</span>

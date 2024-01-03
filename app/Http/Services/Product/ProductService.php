@@ -13,13 +13,14 @@ class ProductService
     public function get($page = null)
     {
         return Product::select('id', 'name', 'price', 'price_sale', 'thumb')
-            ->orderByDesc('id')
+            ->orderBy('id') // Thay đổi đây để sắp xếp từ cũ đến mới
             ->when($page != null, function ($query) use ($page) {
                 $query->offset($page * self::LIMIT);
             })
             ->limit(self::LIMIT)
             ->get();
     }
+
 
     public function show($id)
     {
@@ -40,8 +41,9 @@ class ProductService
     }
 
     // Search
-    public function search($request) {
+    public function search($request)
+    {
         $search = $request->input('search');
-        return Product::where('name', 'like', '%'. $search . '%')->get();
+        return Product::where('name', 'like', '%' . $search . '%')->get();
     }
 }

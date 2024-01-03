@@ -125,6 +125,7 @@ class CartController extends Controller
         $vnp_HashSecret = "JCITOCAHMGDPBJQBEFSVPHVMFMMIHQCB"; //Chuỗi bí mật
         // Lấy ra tổng tiền
         $total = $request->input('total');
+        $name_product = $request->input('name_product');
         $code_cart = rand(00, 999);
         $vnp_TxnRef = $code_cart; //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
         $vnp_OrderInfo = 'Test Thanh Toán Đơn Hàng';

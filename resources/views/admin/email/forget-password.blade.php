@@ -342,7 +342,6 @@
                                                                 <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 20px; line-height: 32px;"><strong>Contact</strong></span></p>
                                                                 <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 16px; line-height: 25.6px; color: #000000;">+845630359</span></p>
                                                                 <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 16px; line-height: 25.6px; color: #000000;">+395590963</span></p>
-                                                                <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 16px; line-height: 25.6px; color: #000000;">phihunghoang.1310@gmail.com</span></p>
                                                                 <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 16px; line-height: 25.6px; color: #000000;">hodinhtuankiet@gmail.com</span></p>
                                                             </div>
 

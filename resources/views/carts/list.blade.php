@@ -66,12 +66,12 @@
                         <div class="flex-w flex-m m-r-20 m-tb-5">
                             <input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text" name="coupon" placeholder="Coupon Code">
 
-                            <div class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
+                            <div class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn6 p-lr-15 trans-04 pointer m-tb-5">
                                 Apply coupon
                             </div>
                         </div>
                         <input type="hidden" name="total" value="{{ $total }}">
-                        <input type="submit" value="Update Cart" formaction="/update-cart" class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
+                        <input type="submit" value="Update Cart" formaction="/update-cart" class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn6 p-lr-15 trans-04 pointer m-tb-10">
                         @csrf
                     </div>
                 </div>
@@ -151,7 +151,7 @@
                 <input type="hidden" name="total" value="{{ $total }}">
 
                 <div class="d-flex justify-content-center">
-                    <button name="redirect" type="submit" style="border-radius: 5px;" class="flex-c-m stext-101 cl0 size-90 bg3 bor10 hov-btn3 p-lr-50 p-tb-7 trans-04 pointer p-30">
+                    <button name="redirect" type="submit" style="border-radius: 5px;" class="flex-c-m stext-101 cl0 size-90 bg3 bor10 hov-btn6 p-lr-50 p-tb-7 trans-04 pointer p-30">
                         Payment VNPAY &nbsp; <img style="width: 30px ;border-radius:5px;height: 30px;" src="/template/images/vnpay.png" alt="">
                     </button>
                 </div>
@@ -163,7 +163,7 @@
                 <input type="hidden" name="total" value="{{ $total }}">
                 <input type="hidden" name="name_product" value="{{ $name_product }}">
                 <div class="d-flex justify-content-center">
-                    <button name="payUrl" type="submit" style="border-radius: 5px;" class="flex-c-m stext-101 cl0 size-90 bg3 bor10 hov-btn3 p-lr-50 p-tb-7 trans-04 pointer">
+                    <button name="payUrl" type="submit" style="border-radius: 5px;" class="flex-c-m stext-101 cl0 size-90 bg3 bor10 hov-btn6 p-lr-50 p-tb-7 trans-04 pointer">
                         Payment Momo &nbsp; <img style="width: 30px;border-radius:5px;height: 30px;" src="/template/images/momo.jpg" alt="">
                     </button>
                 </div>

@@ -62,7 +62,7 @@
                     <button type="submit">ResetPassword</button>
 
                     <div class="login-register">
-                        <p>Don't have an account? <a href="/register" class="login-link">Sign Up</a> </p>
+                        <p>Don't want reset password? <a href="/admin/users/login" class="login-link">Sign Up</a> </p>
                     </div>
                     @csrf
                 </form>

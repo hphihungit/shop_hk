@@ -161,11 +161,6 @@
               </div>
             </div>
           </div>
-
-
-
-
-
           <div class="u-row-container" style="padding: 0px;background-color: transparent">
             <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #aaaaaa;">
               <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
@@ -204,7 +199,7 @@
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Cabin',sans-serif;" align="left">
 
                               <div style="font-size: 14px; color: #e5eaf5; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                <p style="font-size: 14px; line-height: 140%;"><strong>T H A N K S&nbsp; &nbsp;F O R&nbsp; &nbsp;S I G N I N G&nbsp; &nbsp;U P !</strong></p>
+                                <p style="font-size: 14px; line-height: 140%;"><strong>T H A N K S&nbsp; &nbsp;F O R&nbsp; &nbsp;ORDER&nbsp;</strong></p>
                               </div>
 
                             </td>
@@ -218,7 +213,7 @@
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 31px;font-family:'Cabin',sans-serif;" align="left">
 
                               <div style="font-size: 14px; color: #e5eaf5; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 28px; line-height: 39.2px;"><strong><span style="line-height: 39.2px; font-size: 28px;">Verify Your E-mail Address </span></strong>
+                                <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 28px; line-height: 39.2px;"><strong><span style="line-height: 39.2px; font-size: 28px;">CHÚC MỪNG BẠN ĐÃ ĐẶT HÀNG THÀNH CÔNG</span></strong>
                                   </span>
                                 </p>
                               </div>
@@ -285,7 +280,7 @@
                               <div align="center">
                                 <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:46px; v-text-anchor:middle; width:235px;" arcsize="8.5%"  stroke="f" fillcolor="#aaaaaa"><w:anchorlock/><center style="color:#FFFFFF;"><![endif]-->
                                 <a href="" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #aaaaaa; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;border-top-width: 0px; border-top-style: solid; border-top-color: #aaaaaa; border-left-width: 0px; border-left-style: solid; border-left-color: #aaaaaa; border-right-width: 0px; border-right-style: solid; border-right-color: #aaaaaa; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: #aaaaaa;font-size: 14px;">
-                                  <span style="display:block;padding:14px 44px 13px;line-height:120%;"><span style="font-size: 16px; line-height: 19.2px;"><strong><span style="line-height: 19.2px; font-size: 16px;">VERIFY YOUR EMAIL</span></strong>
+                                  <span style="display:block;padding:14px 44px 13px;line-height:120%;"><span style="font-size: 16px; line-height: 19.2px;"><strong><span style="line-height: 19.2px; font-size: 16px;">THANKS YOU SO MUCH</span></strong>
                                     </span>
                                   </span>
                                 </a>
@@ -347,7 +342,7 @@
                               <div style="font-size: 14px; color: #000000; line-height: 160%; text-align: center; word-wrap: break-word;">
                                 <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 20px; line-height: 32px;"><strong>Liên lạc</strong></span></p>
                                 <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 16px; line-height: 25.6px; color: #000000;">+845630359</span></p>
-                                <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 16px; line-height: 25.6px; color: #000000;">phihunghoang.1310@gmail.com</span></p>
+                                <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 16px; line-height: 25.6px; color: #000000;">hodinhtuankiet@gmail.com</span></p>
                               </div>
 
                             </td>

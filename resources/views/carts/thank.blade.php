@@ -9,10 +9,10 @@
             </svg>
         </div>
         <div class="text-center">
-            <h1 style="color: black;">Thank You !</h1>
-            <p class="m-t-16 ">Thank you for choosing! We appreciate your recent purchase and are delighted <br> to have you as our valued customer.
-                If you have any questions or need assistance, feel free to reach out. </p>
-            <button class="btn btn-outline-success m-t-16"><a href="/">Back Home</a></button>
+            <h1 style="color: black;">Cảm ơn !</h1>
+            <p class="m-t-16 ">Cảm ơn bạn về sự lựa chọn! Chúng tôi đánh giá cao giao dịch mua hàng gần đây của bạn và rất vui mừng
+                để bạn là <br> khách hàng quý giá của chúng tôi. Nếu bạn có bất kỳ câu hỏi nào hoặc cần hỗ trợ, vui lòng liên hệ. </p>
+            <button class="btn btn-outline-success m-t-16"><a href="/">Trở về </a></button>
         </div>
     </div>
 </div>

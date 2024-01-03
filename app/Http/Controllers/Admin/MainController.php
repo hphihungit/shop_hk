@@ -35,14 +35,14 @@ class MainController extends Controller
     public function indexAdmin()
     {
         return view('admin.home', [
-            'title' => 'Trang quản trị Admin'
+            'title' => 'Coffee shop'
         ]);
     }
 
     public function indexUser()
     {
         return view('home', [
-            'title' => 'Trang quản trị Admin',
+            'title' => 'Coffee shop',
             'menus' => $this->menu->show(),
             'sliders' => $this->slider->show(),
             'products' => $this->product->get(),

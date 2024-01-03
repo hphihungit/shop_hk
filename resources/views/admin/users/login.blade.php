@@ -9,7 +9,7 @@
 <body>
   <div class="background"></div>
   <div class="container">
-    <div class="content">
+    <!-- <div class="content">
       <h2 class="ten"><i class='bx bxl-firefox'></i>The K&H Corner Shop</h2>
       <div class="text-sci">
         <h2>Welcome <br> <span>To Our Website Coffee.</span> </h2>
@@ -22,7 +22,7 @@
           <a href=""><i class='bx bxl-gmail'></i></a>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- Form login -->
     <div class="logreg-box">
       <div class="form-box login">
@@ -61,8 +61,12 @@
             <a class="btn-text" href="{{ route('login.google') }}">Continue With Google</a>
           </div>
 
-          <a class="btn-text" href="{{ route('auth.facebook') }}">Continue With Facebook</a>
-
+          <div class="facebook-btn">
+            <div class="facebook-icon-wrapper">
+              <img class="facebook-icon" src="https://static-00.iconduck.com/assets.00/facebook-icon-512x512-seb542ju.png" />
+            </div>
+            <a class="btn-text-facebook" href="{{ route('auth.facebook') }}">Continue With Facebook</a>
+          </div>
           <div class=" login-register">
             <p>Don't have an account? <a href="/admin/users/register" class="login-link">Sign Up</a> </p>
           </div>

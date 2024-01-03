@@ -62,10 +62,10 @@
 
 /*------------------------------------------------------------------
 [ Bootstrap ]*/
-.container {max-width: 1380px;}
+.container {max-width: 1420px;}
 
 @media (max-width: 1600px) {
-  .container {max-width: 1352px;}
+  .container {max-width: 1380px;}
 }
 
 /*------------------------------------------------------------------
@@ -281,9 +281,12 @@
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  height: 65%;
-  margin-right: 55px;
+    align-items: center;
+    height: 65%;
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 90px;
+    color: #be9c79;
 }
 
 .logo img {
@@ -404,7 +407,7 @@
 /*---------------------------------------------*/
 .main-menu > li:hover > a {
   text-decoration: none;
-  color: #6c7ae0;
+  color: #be9c79;
 }
 
 .main-menu > li:hover > .sub-menu {
@@ -422,7 +425,7 @@
 }
 
 .sub-menu > li:hover > a {
-  color: #6c7ae0;
+  color: #be9c79;
   text-decoration: none;
 }
 
@@ -1953,6 +1956,7 @@ input.num-product::-webkit-inner-spin-button {
 .block1 {
   position: relative;
   border: 1px solid #e6e6e6;
+  border-radius: 5px;
 }
 
 .block1-txt {
@@ -2116,8 +2120,8 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .stext-102 {
-  font-family: Poppins-Regular;
-  font-size: 14px;
+  font-family: 'Material-Design-Iconic-Font';
+  font-size: 15px;
   line-height: 1.7;
 }
 
@@ -2325,6 +2329,7 @@ input.num-product::-webkit-inner-spin-button {
   font-family: Poppins-Bold;
   font-size: 28px;
   line-height: 1.1;
+  color: white;
 }
 
 .ltext-103 {
@@ -2709,7 +2714,7 @@ input.num-product::-webkit-inner-spin-button {
   border-bottom: 1px dashed #d9d9d9;
 }
 .delete_xoa{
-  color: red;
+  color: rgb(230, 12, 12);
   font-weight: 600;
   font-size: 17px;
 }
@@ -3088,15 +3093,28 @@ input.num-product::-webkit-inner-spin-button {
 }
 /*---------------------------------------------*/
 .hov-btn3:hover {
-  border-color: #717fe0;
+  border-color: #be9c79;
   background-color: #ac8863;
   color: #fff;
 }
 .hov-btn3{
-  background-color: #be9c79;
+  background-color: #adacaa;
   color: #000;
 }
 .hov-btn3:hover i {
+  color: #fff;
+}
+
+.hov-btn6:hover {
+  border-color: #968473;
+  background-color: #ac8863;
+  color: #fff;
+}
+.hov-btn6{
+  background-color: #be9c79;
+  color: #000;
+}
+.hov-btn6:hover i {
   color: #fff;
 }
 
