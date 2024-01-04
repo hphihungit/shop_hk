@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/template/css/register.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
   <div class="wrapper">
     <form action="/admin/users/login/store" method="post">
@@ -24,9 +25,9 @@
         <i class='bx bxs-key'></i>
       </div>
       <div class="remember-forgot">
-            <label></label>
-            <a href="{{ route('forget.password') }}">Forgot Password</a>
-          </div>
+        <label></label>
+        <a href="{{ route('forget.password') }}">Quên Mật Khẩu</a>
+      </div>
       <button style="margin-bottom: 16px;" type="submit" class="btn">ĐĂNG NHẬP</button>
       <div class="separate">
         <div class="line"></div>
@@ -44,7 +45,7 @@
         </div>
         <div class="btn-social-login">
           <a class="btn-text" href="{{ route('login.google') }}">
-          <img src="/template/images/google.png" class="icon" alt="">
+            <img src="/template/images/google.png" class="icon" alt="">
             Google
           </a>
         </div>
@@ -56,4 +57,5 @@
     </form>
   </div>
 </body>
+
 </html>

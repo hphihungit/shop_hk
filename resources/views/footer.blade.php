@@ -408,4 +408,4 @@
 <script src="/template/js/public.js"></script>
 <!-- Messenger Plugin chat Code -->
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<df-messenger intent="WELCOME" chat-title="ShopHK" agent-id="7676dd9a-ca1e-4d76-951c-73f9c20acf07" language-code="en"></df-messenger>
+<df-messenger intent="WELCOME" chat-title="ShopHK" agent-id="7676dd9a-ca1e-4d76-951c-73f9c20acf07" language-code="vi"></df-messenger>
